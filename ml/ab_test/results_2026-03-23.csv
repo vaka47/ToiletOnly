@@ -1,0 +1,12 @@
+scene_id,file,scene,expected,local_v6_confidence,candidate_b_confidence,candidate_c_confidence
+N01,N01_white_chair_full.png,white_chair_full,ignore,82.3,67.5,92.6
+N02,N02_white_chair_full_2.png,white_chair_full_2,ignore,64.3,86.4,93.9
+N03,N03_refrigerator_full.png,refrigerator_full,ignore,2.2,87.4,89.9
+N04,N04_white_surface_close.png,white_surface_close,ignore,0.4,75.8,85.9
+N05,N05_white_cabinet.png,white_cabinet,ignore,1.7,24.0,45.1
+N06,N06_door_corridor.png,door_corridor,ignore,0.9,52.0,59.4
+N07,N07_blue_towel.png,blue_towel,ignore,0.1,89.7,41.3
+N08,N08_toy_toilet.png,toy_toilet,ignore,10.4,26.4,52.8
+T01,T01_toilet_full_front.png,toilet_full_front,detect,91.3,87.3,76.5
+T02,T02_toilet_angle.png,toilet_angle,detect,89.3,89.9,43.6
+T03,T03_toilet_zero_case.png,toilet_zero_case,detect,89.9,91.1,54.1

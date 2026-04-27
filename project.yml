@@ -1,0 +1,27 @@
+name: ToiletOnly
+options:
+  deploymentTarget:
+    iOS: 16.0
+  bundleIdPrefix: com.toiletonly
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.toiletonly.app
+    SWIFT_VERSION: 5.0
+    INFOPLIST_FILE: ToiletOnly/Info.plist
+targets:
+  ToiletOnly:
+    type: application
+    platform: iOS
+    deploymentTarget: 16.0
+    sources:
+      - path: ToiletOnly/Sources
+      - path: ToiletOnly/Resources
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: 1
+        INFOPLIST_FILE: ToiletOnly/Info.plist
+    scheme:
+      testTargets: []

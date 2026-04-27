@@ -1,0 +1,2 @@
+https://dorc.ks3-cn-beijing.ksyuncs.com/data-set/2020Objects365数据集/train/zhiyuan_objv2_train.tar.gz
+https://dorc.ks3-cn-beijing.ksyuncs.com/data-set/2020Objects365数据集/val/zhiyuan_objv2_val.json

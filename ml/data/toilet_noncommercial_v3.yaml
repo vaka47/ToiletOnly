@@ -1,0 +1,7 @@
+path: /Volumes/Untitled/ToiletML/data/dataset_noncommercial_v3
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: toilet

@@ -1,0 +1,6 @@
+train: /Users/vaka47/Dev/Приложение в туалете/ml/data/lists_v6_from_v5/train.txt
+val: /Users/vaka47/Dev/Приложение в туалете/ml/data/lists_v6_from_v5/val.txt
+test: /Users/vaka47/Dev/Приложение в туалете/ml/data/lists_v6_from_v5/test.txt
+
+names:
+  0: toilet

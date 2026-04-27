@@ -1,0 +1,827 @@
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000033.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01866795.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01810779.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_297_jpg.rf.6647f1a2bb72ba5eeff403295b5ad2a8.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00669394.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01943760.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1611_jpg.rf.5e599d390c5d2ee8565ccaf24ef66ddb.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00585267.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1175_jpg.rf.009bd1358378f32382d9aefe0564fa6a.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00230384.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1028_jpg.rf.8e9fd174cc4bdd34e2e8c578b22b15fc.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01536975.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01421690.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000306733.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00682009.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000005.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_270_jpg.rf.910c36edb840bd23ba89056f7694f738.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000149.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00267982.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000009.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000206271.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_1feee75d0cd8b08c.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000140.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_7bbea10515d5c0e8.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01072278.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_503_jpg.rf.d13c10419f3761fa7cebe57e7e979629.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000100.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000065.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2513_jpg.rf.897900d7cc4f4a3e1fae053d90602fc7.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000124.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000376310.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000167.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1191_jpg.rf.0346891f3ca1c8ce7e90e58935fd63c6.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01821650.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_7e5012c817ccbf11.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000068.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00280966.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00353025.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1837_jpg.rf.bed89782eaf0a53f9d964c42f9e5ce49.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000016.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01131096.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_298_jpg.rf.87726d10a4c42768563fbdcc95164d37.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2332_jpg.rf.ffbc8ddbad3cc95c66cc2e657efafbdc.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000045.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2085_jpg.rf.c2239022693eca43218641b420d4ce11.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000154718.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01909534.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00006986.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000014.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00192685.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00300143.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01255983.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000030.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2682_jpg.rf.0b0fa4835f36c7035679db6197f29c5f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000157.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2866_jpg.rf.94a7f00beedc92fa69d313a0e957df17.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00686012.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_662_jpg.rf.21bc5193a8b75d45fecb1a213a71e804.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00477444.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000054.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000482100.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00655946.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2329_jpg.rf.98908bf893cd1edb15764e09e303c9b2.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000119.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000551304.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1017_jpg.rf.397723f9e203c8241cef83f286e12d42.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000368212.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01359257.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00564618.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_73ec725bb7b666f0.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2534_jpg.rf.5df19a26b562ea3f74089b14dad3e69b.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1176_jpg.rf.c1216143023ed99472468d05d908935a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000142.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000176.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1559_jpg.rf.5ddd351977cf897450f1a30839ed345c.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01019858.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01793233.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00340091.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000021.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000055.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_3a762921998045e1.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000076.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00154896.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_844_jpg.rf.ecf150253cfab1f533d58b5e70bebae4.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01987924.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01646718.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_886_jpg.rf.06657ef4129b1b620351296323694653.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01556702.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1228_jpg.rf.9381cabef223e26335e1afd3b85aade5.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01302499.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1967_jpg.rf.d2da58a396f11f15fe333e4657f01a62.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00190248.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000092.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00135288.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000023.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_259_jpg.rf.b00d3781e2f4e93810132c63ca175218.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00005197.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01253742.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_516_jpg.rf.d9b57b8b933781ecb2e88483743b150d.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000040.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2301_jpg.rf.e356be4e90d35f64e9298d553bf9443a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2697_jpg.rf.37226fe8278461baf4d116916abd954a.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01095014.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01669861.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1439_jpg.rf.e0f24b652c5317ad6cea3703b83a5efe.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000069.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_927_jpg.rf.45ea8d299233ef55b385eb773c9c0dc7.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00901906.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_448_jpg.rf.cd0a28f96bcd3e1302479c4ac8704f83.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_338_jpg.rf.b087a8293ab9bf807a951a6f423e0937.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2318_jpg.rf.5d974bd0630b9fa95a33de403b5dfc44.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000185.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000134096.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01987875.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00726025.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1363_jpg.rf.0c493e31504c21126cdc81a1f8476de1.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00718426.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_703_jpg.rf.c1f916ee0815351ff59e313c8c17a59d.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000056350.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_034f70e57e0fe904.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_702_jpg.rf.ad466d9d9ef467a6a644f444aee56ac6.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00134659.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2125_jpg.rf.e4c7a61db69f6b94176791914d3ed769.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01807102.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000186.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_277b915690494d72.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2922_jpg.rf.3fe6ca097a255ff3ee1dc8000b7fe8fd.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01231223.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000136.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_6cd2f48fef57f680.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000201775.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00146993.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_105_jpg.rf.7d73cb64d560a1564077ee4cc195b102.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000060.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_3fd325073d40a5bf.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000067.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_3e4a2a7109888088.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1406_jpg.rf.f68387cbf682f67d578a79a17880593c.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000031.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00111423.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_a454d48e3458f39b.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00631801.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000108.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000070.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000002.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000146.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01397893.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_bd46500536290d3a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_532_jpg.rf.1de984acf6710d29cf818019c6e5601c.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000193.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00656470.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000173.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00202445.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000083.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1003_jpg.rf.a0d4024fd12686d0e44f86df0c0f040f.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00513689.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000118.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_846_jpg.rf.c295fa59dc4718472d5a8b1428ffb93f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_e7d34da1257250ed.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_852_jpg.rf.779b568c2f9b1859daf80ad818108258.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_9bbe5902409bfdca.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01700695.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00658953.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_852_jpg.rf.63ad3717bbb3ba222c377841db844189.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00569599.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000044.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01133722.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000111.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00969850.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000125.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000272416.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_693_jpg.rf.25570a4bf2a661be8f2a59477f0eb3f7.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1767_jpg.rf.9e944202780c95114dbee6da0d70ac65.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000175.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00998916.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000058.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_718_jpg.rf.e13806837c788dde980fe4afd0ae9721.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01065665.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_6edc08d11a5c6619.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000075.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1809_jpg.rf.1f012a0397918af9cd46b5daf5d1600e.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01831362.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00594507.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000147518.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000103.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01827980.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2912_jpg.rf.277c2c625c3197717c68d562b22221b9.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000081.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_39_jpg.rf.d97fa93362949ca39dc66e194d3357a1.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1758_jpg.rf.036641b2d197bd13f36e1c23d7bef68e.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01656526.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2442_jpg.rf.2fbbda9bcd0a4b78f884e3e099ed9c28.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2910_jpg.rf.342d0a7b7e42b97efe6b2655ab745c4e.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01339866.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_688_jpg.rf.fcdb9267444dcf5e41e7ccc28ab7a5b2.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2708_jpg.rf.fd5db56abce02b2e045ce19c4d777951.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_3007_jpg.rf.61b2348ed3d9ab7cd7fcd1dc33b507d5.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00597660.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_877_jpg.rf.54038ee0e49327b966a5908b98aa1737.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2063_jpg.rf.d16e87124d0ae1c0eba6d5c974ece97e.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000019.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_474_jpg.rf.efebbec41866360fbe54dc6b6f965c0a.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00088148.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000197.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1765_jpg.rf.cd8eaa7b35509263fd55634535f495f9.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_514_jpg.rf.bc77ca769cfb76b58cdae4f57a9d41a6.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00671405.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_491_jpg.rf.e35e00c563f9a167c2a5d7844ea2e575.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_75c3af502e207544.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_648_jpg.rf.29532c3697ee1d1d1cedf94c666ce808.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_ccc6b75afe027c33.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01249815.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01680998.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00169461.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_292d5999e9a35f9f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_312_jpg.rf.b8e6c97cd9b9b9a279b034b0a23314dc.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_267_jpg.rf.c5cc33fcbd58a1b8ffdabc4101ceeffb.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000120.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01056555.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000101.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00514735.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01540374.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000131.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_932_jpg.rf.65072ca7ababe1d8d2e04c092c405011.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000148.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01611739.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000147.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000094.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_7928217d2528ca49.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000408696.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00911713.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_3038_jpg.rf.7f4578afaf524f0b3e8b6a99ad0aa4b4.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_2_jpg.rf.3dcbb9709763162b39dad91c82bdbdc1.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00238598.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00274627.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_312_jpg.rf.cd68b945f45349bf2ba47996be7bfbf6.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000195165.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000008.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00352650.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01022366.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000115.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_85_jpg.rf.adde42ac8df7bd6fefbe884b7eb9019f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000089.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01905005.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_299_jpg.rf.21e61be6ab4878cf334b41043c40eb78.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2859_jpg.rf.5fc444d6d5347a8cb0fa8178e7d24e72.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000190.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2052_jpg.rf.e1ab1a2e5076ae25268035583ccff403.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1558_jpg.rf.ed83a072ae8704a8283f42e4f08a8bdc.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01692336.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000179.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000158.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000161.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000123.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000082.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01681982.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00395017.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00650863.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00602436.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01063696.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_488_jpg.rf.0c23a8fd668e020d2b94e1f2929ddcb1.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000286907.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00980651.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2494_jpg.rf.7c4347930fff851cd3e835bb092a63a4.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01486374.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00277530.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000200.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00586078.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00458281.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00384672.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000077.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_252941bfee2147e3.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000051.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00960387.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000090.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_449_jpg.rf.7960496be1e00bb84786f3e05c81eae6.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_81d113c0790b98f6.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2842_jpg.rf.0fa265c6cf372c73dd2554dbf4c535fa.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000168.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2872_jpg.rf.ac717b2427466d764e07161b53673347.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01884595.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2047_jpg.rf.f6475fecdc1876adb46b03659f1ee417.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00068264.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00681080.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00210322.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000309495.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00676890.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_49752e381e86d790.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00568140.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000095.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01275484.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00558205.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1595_jpg.rf.1419425ada9e626cda6b8edc9ed6a515.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00604751.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000036.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_98d83583af38b4a3.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_c2634119ba1eeef5.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2871_jpg.rf.bd5be9a8d5ff0f2254d3b5609f9d8d64.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000109.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00926718.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_478dd55b41c6b631.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00409836.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000564023.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01910782.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_ac085b153d9f86f3.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2319_jpg.rf.d1ae74e1fd67ac3eeab708fcecef85a4.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000328959.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000027.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1361_jpg.rf.c5b0f512d0d74b5a494ba652e7a2ca67.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00620385.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01917551.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000423971.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_878_jpg.rf.41b2b3d54ee1e23eea654a25d9964747.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000351362.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000007.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000151.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00901866.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_113_jpg.rf.2286160981689188ccb73f0731e9aa7b.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01849338.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00628438.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000088.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_e37569883c26184c.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00678887.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1956_jpg.rf.b53d23b1ab439dac665841a9e048b81d.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000170.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_489_jpg.rf.c56e08fe3b8fc02a5dc4ce64c10f749a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000110.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_63_jpg.rf.6435cd7f6122de2a1425fa729205ae03.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000097.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_c5d4ebcdbff626e6.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000458054.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00231322.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_307_jpg.rf.ede5ab3f33a8efd72978de9b26f87ff1.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000059.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_75_jpg.rf.81a38fcd5db9213e82969c90f3dfac6b.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1773_jpg.rf.adbb63a692da3f6df69858f48b513825.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00627657.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000126.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00924269.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01099456.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_6bb3c263f0451b66.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1772_jpg.rf.c9d43808b553a97e6f9815a92af44c9b.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00519843.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000107.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01573434.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00559689.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01129164.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01087451.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01642000.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1605_jpg.rf.8492b36a0df4885d85c57c464f98c3e0.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00323723.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00132292.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00288937.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00566014.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_7a01e9809acfbe3a.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01681398.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01273812.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000114.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_851_jpg.rf.47d6cd7f914875059989ae100ed74dee.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_925_jpg.rf.d9222d207eb823b276b0a44b22161b13.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000064.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00582011.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1607_jpg.rf.7bbbb54fd346b19a1b2f1578ac8d3c96.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_853_jpg.rf.82924a869d19631dfb2e05a4f3f50ecf.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000071.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01652272.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00619528.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_b12dfd0e4ca9b801.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_676_jpg.rf.ad34f3f0f4857f6f8b4c9ce078962095.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000555012.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01297389.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000024.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_299_jpg.rf.1cc27e9ed22f217f740f984ed4503070.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_661_jpg.rf.55636c77a6b53029a113b4592146a076.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_12_jpg.rf.b52e22713d184b52931dae125ae76944.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_416afb9920bce870.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2509_jpg.rf.e04fdd418d89fd5c86186d2af3e77112.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00649986.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_f53e2da628434a28.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_892_jpg.rf.a7712a211576ed765f9d76c9f7a09621.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01562680.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00058304.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00025296.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000363784.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000192.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01799158.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000112.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_528_jpg.rf.cf36b79a352e39740e0d36910f9268e1.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000128.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00532712.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01542832.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01543853.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000102.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00688072.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00679328.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00733931.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00577675.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01315410.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1189_jpg.rf.858deaacac1e78150f1771c08f84e69f.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01366128.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00627834.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000117.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000138.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01771325.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000194.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00376111.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01774776.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000557258.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000026.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00603462.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00500865.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_a577e4b339f721ec.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_452_jpg.rf.e4b92a16f1ad072e4331432a0c9d15ae.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1376_jpg.rf.eb4a99a735501574d25d9cb8d641fc01.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1411_jpg.rf.987a0a73d80e813fec7310c8ca33fb5b.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000004.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01011467.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_075e388e097e7156.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00399870.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000013.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000191.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000129.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00234933.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000162.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1000_jpg.rf.724804cf144300afc224fea56be338e9.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00264666.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00507716.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01357899.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00658722.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2046_jpg.rf.a00e139c7e4ab9ebed2df76d5684d991.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01220723.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_110_jpg.rf.0903b87d9a45369f5f91898627bf29ee.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01700416.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00566278.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01087369.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00944904.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000141.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2331_jpg.rf.4cb496dbc4ab8d18ee7d445bda31a088.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00617855.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00631896.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01910088.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000038.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_516_jpg.rf.c432f0dd2a8b6bfc07e1612f96444528.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2508_jpg.rf.9ae5c6f024460bab89bff7b6744ffd05.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00541844.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00504686.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00474239.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1807_jpg.rf.1ba505f2eb5bc541a7b38cfc7e28097f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000166.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00319278.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00263719.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000079.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000050.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000037670.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000017.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01234771.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_ead5ec887d5c02a7.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000130.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00200559.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01773157.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01375116.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000061.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01060806.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_3c419bd7738200af.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00701833.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000116.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00430390.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_268_jpg.rf.336353ce2d820757106d529bfca3020b.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000122.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_266_jpg.rf.fc8963910fca4244b85de672027764fd.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000172.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000099.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000020.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_d47c8cb5f4281313.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000012.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000133.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00665034.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00679530.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2086_jpg.rf.408c6ea308edaa491cc5cf140f497666.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01443949.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01601162.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000169.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2084_jpg.rf.5d8d0726f99e683fe9d85d454dd4a895.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_272_jpg.rf.dbfb6248b8394665dfc603a5dc644f70.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_463_jpg.rf.342047c6c49c8dd8ff173d234ef9893f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000001.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000057.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01990802.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2858_jpg.rf.cc00f8e8cb8fd42847d35405aa170348.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_d0742fa82d85c582.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000096.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01660084.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_917_jpg.rf.b2912ff0babe8ea2074358e7adcb1ee6.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_61_jpg.rf.078037f3f86d5e5cf16f975ad00c413c.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00682741.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2720_jpg.rf.1877f635032b1e7d41788e0b9cad0ad9.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2090_jpg.rf.b21c4392567cd9c9b9f2609f26e9c440.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1572_jpg.rf.bb9c6aa08366328b2ab7953fd50e8bca.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2245_jpg.rf.c23c84485b62d9114d70c7a91f8b5acf.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01256131.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_306_jpg.rf.3a9247f5e122720849b452ebadb8c96e.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000072.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000181.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01554257.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000188.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000049.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_0433ddce791bfc68.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_475_jpg.rf.2c1171bdcfff4504fba338f166762497.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000106.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_106_jpg.rf.97810fbbc21e7131893fa898f2f87a34.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2656_jpg.rf.a495ef90a18b70876265401d56a01f86.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000056.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01752170.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2467_jpg.rf.ee8a63af0c14055dd3cce0aec548377d.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01205231.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00658125.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_685_jpg.rf.c0eaa1c6a2afecdc5f3984fbb2d27927.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01960786.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00314476.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00582963.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2130_jpg.rf.5e672ee4316fd2d1eb899427397a1ecb.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00297526.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000150.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_77_jpg.rf.8b21d8e6c79fcaeeacf86a6a2f1aa7c2.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000003.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000132.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00188716.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00926367.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_1317f4022e2fae9b.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00318200.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000143.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01140721.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00955066.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_949dbc1ca3570d6a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000063.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000164.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_273_jpg.rf.0de75eaeea02e6bf2a5b38c183ef748a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000171.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_0399ac6d4a9e909a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2709_jpg.rf.ba8f613d148d48c905314260e1e0d772.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_884_jpg.rf.01ed41df5b31604cfabf563f634efa58.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000121.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01102176.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000098.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000308466.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000155.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000153.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00232051.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_853_jpg.rf.1b4521a2698bc1d323c49741cc91e726.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00444360.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000010.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000053.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01233305.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000087.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_cc4966f88fdb277f.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00307759.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01350681.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_11_jpg.rf.3c167b462134a71710034b4f78ce654c.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00391142.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000086.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000025.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2905_jpg.rf.4fd3ac4b5c78911965598ae0556debf7.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01417142.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1957_jpg.rf.a22d46c3f3f79ba1472399b85985159e.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00686147.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_abcc1aee8d01eda7.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01464282.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_476_jpg.rf.40ee9919ce902dfc69d17ba74e30177f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000006.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01515474.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000074.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_1d374346d2a4c6c2.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2315_jpg.rf.e70ef771f95cbbb364d451a74acd7f6b.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_2da75f6335928609.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000174.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000062.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01499977.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01356609.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01243521.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000196.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1229_jpg.rf.46f89a83eb68e0ded04e576f7dc46f62.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01308476.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00645684.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000032.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01218171.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01622095.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000212453.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000135.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_e6030a23fdfd0a9c.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01753555.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1823_jpg.rf.fa96e109de00aa72550ce0b3f5a98ba8.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_646_jpg.rf.781202f8e4a6bdaa54e0cfc074e5d75f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_38_jpg.rf.de783fa9614c59f37c99dd7ef0e212f3.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_339_jpg.rf.c93f447d3d2497d15cfb560554427b43.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_461_jpg.rf.ae59dc0016c656bffa3bd21c2652b205.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_529_jpg.rf.57f37439636e50cd074a46367f1da824.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000113.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000043.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000199.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000139.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000489091.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2913_jpg.rf.2e0e1d83f11054465cc3328826f492fc.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01386237.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00652287.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000042276.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000232649.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01262748.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01010287.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00308434.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00678351.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2117_jpg.rf.140b61c4cd727d8fd3cdca47fa902eda.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00911245.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00630866.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_515_jpg.rf.a502dcf0e538042e68c68a8071292423.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00429598.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_cdc1ea32e380d67f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_887_jpg.rf.62e33dda494877237eb88519fc160653.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01687636.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000028.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000073.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_112_jpg.rf.bce13ced3d43a975f99bf98eee06d00d.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1639_jpg.rf.128c65978dad8e5920a4ad20a754ae0b.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01342590.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_239ba76d1b73e06e.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_728_jpg.rf.8f033a2a555b2460103b73e36569f976.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1161_jpg.rf.f3f2471bb56a3b086cf83c90b5d7df28.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01854054.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01080377.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00583724.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01866638.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000015.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000046.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00277176.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000154.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00539987.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00064627.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1995_jpg.rf.d5365fbcc37f0b9f3a0884647e35a556.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_bdc4fdbed2bd2000.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000105.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01960506.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_930_jpg.rf.472f2a389ad3bbd8adbe8b08d6859102.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01607460.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000187243.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000182.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00292228.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01466570.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_649_jpg.rf.53335017933691621c01ec484cda22b1.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01155209.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01830399.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000514914.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01458091.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2053_jpg.rf.ca4754a4e81619a818da69a4e948c145.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_106_jpg.rf.e64484cd9fdad8a592e63cab735339c5.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_716_jpg.rf.6a084f2ab208175e467c9d3f24323fe2.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00479849.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2867_jpg.rf.7f4bb3ddbdfdd7a609f90ed0180726b4.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00477822.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_663_jpg.rf.7d99c4594f6060ee86e1680bfde39ed6.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_2434c454edbe1960.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000195.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2906_jpg.rf.533dc46d0555e476e2c03b7374adc22a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1436_jpg.rf.4b235227b52a86cfb87298fe64dab265.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000005503.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00201090.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00353117.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_528_jpg.rf.70d7395419677e2fa19b1d422eb9ba7f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000029.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00189793.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_1_jpg.rf.8c7a1cb3c4e3676d5d19a7afc82ca78f.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00591187.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01589529.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_847_jpg.rf.0ea1bfa6c35233bba191adc6e2dae315.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01486449.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000134.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_919_jpg.rf.80104ad97c6e36051d29be754c6f95ad.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_3_jpg.rf.d6d64bbda7fb3551b6c0c075f337c720.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_500_jpg.rf.910c0df34fe9cf0888e35e4aad5d2941.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01927132.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_6d7433b4c9a6b24a.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00486720.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000184.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00029816.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1608_jpg.rf.30fcc4022974e21901affa81f590a85d.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00631143.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000080.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01928884.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01327276.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000037.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000127.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01679910.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00431489.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2327_jpg.rf.463bfd56ba2443b907fd3f8cc7ee4878.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000035.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000022.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_918_jpg.rf.64c2ebfd067ff1252c4dded586ea5103.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000018.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_273_jpg.rf.ec4cc5217da19f67c069ea4728c091f5.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_258_jpg.rf.f49dd2d1d90b79837f5f81515953e0f4.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01515868.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_138_jpg.rf.35499ef521e567abee786c3e6bd257ca.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00647673.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000066.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_660_jpg.rf.53b8f40a58f92a0825adce724093e96c.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_493_jpg.rf.e6e0f0e2b8698011bb6202e75bead790.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_00908456.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00578975.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1808_jpg.rf.57d12aea7f082da9f4b4175e4a85e342.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000039.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00501455.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_729_jpg.rf.c81591c5d155a9df01bd3fb425ddb4ae.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_661_jpg.rf.211aa5864f5ccc7315aa1505b508ae02.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01604836.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_310_jpg.rf.246b0bb19ee4b7647e13b00111be0436.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00638660.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000011.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000144.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000117914.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00333358.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01851753.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_272_jpg.rf.58e6eb56be65d57765c5e9a13b057097.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01611453.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01917078.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1200_jpg.rf.ae586912886dbf78f791fbb232c88c26.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2721_jpg.rf.1d122dc05a54e378b86d527ae99db848.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000384808.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1377_jpg.rf.f90948623faee9197147da8d269df813.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2292_jpg.rf.97a5785466d5d451abeae64733970553.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_95d5ca4b41600b68.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_311_jpg.rf.6d9857b50f11369cd54e476377106cb5.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_b008536da9781b75.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000052.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000180.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000078.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2683_jpg.rf.ec48ab8801c1666002f71818524ebf65.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01320441.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000163.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01933463.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00302539.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01408959.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00011991.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000152.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01181444.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01762124.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_136_jpg.rf.7de4e9f815b09a9302a4ff6b1cd129c9.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00682434.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01511111.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000156.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000348216.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000165.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_b6b1f6e7715d4f02.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000403385.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_514_jpg.rf.49c3b104107324f13fa017c66d97f4cb.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_003b53edf0d0773c.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000047.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00640645.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2045_jpg.rf.4c1145a2d27a0180265e3336afda0b9f.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01555008.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00375239.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000183.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01298393.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000160.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_501_jpg.rf.3e635dfb79570b7fb1d61ebcf537ece1.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_8872b7b84675a3c3.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_663_jpg.rf.3134984837d0e6d196d3fcee1e97a25b.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01661744.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_515_jpg.rf.98e4488375e31efbed976190ff5243ae.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1798_jpg.rf.b32d3b4a803e9f3d250916abe622f4af.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000042.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2669_jpg.rf.87e56b3a1f1b4096b66f2e3cf5a7384d.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01752929.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_1174_jpg.rf.93165411b8c75606eb69b1f7c241a49f.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_9fa5578fb2936944.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_104_jpg.rf.cb9c06903ead37493d57def160a307ff.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00024478.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00684311.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01634505.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_10085be0a892b552.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2087_jpg.rf.f603c30bc10d80425aa116299c94f275.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000085.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01910081.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000189.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_931_jpg.rf.6b623dc53f20c26caa9bbd07df4e593a.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000048.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2671_jpg.rf.3e79b26a2451c23eddf335a003c748ba.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000159.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000145.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_107_jpg.rf.d7b3af8871f3400bd94a0c0f6f4fc924.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000041.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000177.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01529639.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01818103.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01367528.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000178.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01154906.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01470108.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01525577.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01640326.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00565003.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_41f3fa67a66afdef.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000091.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00590315.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2126_jpg.rf.d6a6cec067f7833664de47130918f70c.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01527879.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000104.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_111_jpg.rf.ba716e4e5ffa97aac156c519d3951669.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00153840.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_675_jpg.rf.c72f8a00f06b2430f7f79bd26e35c99d.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_10_jpg.rf.6aa8789766d0b6839c2c3609dbed955d.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01710374.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000376442.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00664628.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000093.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000034.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01118566.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v1_00512331.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_ci_wr_img_2088_jpg.rf.131c8a4adc36c56c9ae5137fd9b33d9b.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01865722.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000187.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/rf_test_aws_wr_img_648_jpg.rf.f99be00b486e550ded059c3498151186.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000137.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000084.jpg
+/Volumes/Untitled/ToiletML/data/coco_toilet_full_clean/images/test/000000035770.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01090897.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/work_v6_from_v5/objects365_hard_negatives_split_yolo/images/test/o365neg_test_000198.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01720587.jpg
+/Volumes/Untitled/ToiletML/data/objects365_toilet_full/images/train/o365_objects365_v2_01825485.jpg
+/Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug/images/test/oi_test_63709b141ad956d9.jpg

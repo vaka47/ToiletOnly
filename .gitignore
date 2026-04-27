@@ -1,0 +1,35 @@
+.DS_Store
+*.swp
+
+# Python / temp caches
+.pytest_cache/
+.tmp_coreml/
+.codex_tmp/
+**/__pycache__/
+*.pyc
+
+# Xcode user data and build outputs
+DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Keep nested repo metadata out of monorepo
+ToiletOnly/.git/
+
+# Large local datasets/artifacts not required for project source
+ml/data/dataset/
+ml/data/dataset_aug/
+ml/data/dataset_noncommercial_v1/
+ml/data/dataset_noncommercial_v2/
+ml/data/coco_toilet/
+ml/data/coco_toilet_smoke/
+ml/data/roboflow/test/
+ml/data/roboflow/train/
+ml/data/roboflow/valid/
+ml/data/objects365/zhiyuan_objv2_val.json
+ml/data/objects365/train.json
+ml/data/objects365/val/
+ml/data/openimages_v7/
+ml/runs/
+ml/.matplotlib/

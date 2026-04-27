@@ -1,0 +1,25 @@
+# High-value hard negatives for toilet false positives
+Chair
+Stool
+Refrigerator
+Cabinetry
+Cupboard
+Closet
+Wardrobe
+Drawer
+Shelf
+Door
+Nightstand
+Table
+Countertop
+Bed
+Couch
+Towel
+Sink
+Bathtub
+Shower
+Mirror
+Washing machine
+Dishwasher
+Toilet paper
+Waste container

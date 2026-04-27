@@ -1,0 +1,12 @@
+file,expected,predicted,pass,unlock_score,custom_toilet,scene_top,scene_top_conf,scene_toilet,negative,negative_conf,reason
+N01_white_chair_full.png,ignore,detect,False,79.0,82.3,remote,21.7,0.0,laptop,0.4,confirmed
+N02_white_chair_full_2.png,ignore,detect,False,61.7,64.3,toilet,16.6,16.6,chair,0.5,confirmed
+N03_refrigerator_full.png,ignore,ignore,True,2.1,2.2,refrigerator,85.5,1.0,refrigerator,85.5,blocked:refrigerator
+N04_white_surface_close.png,ignore,ignore,True,0.4,0.4,refrigerator,5.6,0.0,refrigerator,5.6,weak_toilet_evidence
+N05_white_cabinet.png,ignore,ignore,True,1.6,1.7,bottle,8.4,0.0,sink,5.1,weak_toilet_evidence
+N06_door_corridor.png,ignore,ignore,True,0.8,0.9,refrigerator,6.8,0.0,refrigerator,6.8,weak_toilet_evidence
+N07_blue_towel.png,ignore,ignore,True,0.1,0.1,book,17.7,0.0,tv,11.6,weak_toilet_evidence
+N08_toy_toilet.png,ignore,ignore,True,9.9,10.4,keyboard,33.1,0.0,dining table,0.9,weak_toilet_evidence
+T01_toilet_full_front.png,detect,detect,True,96.0,91.3,toilet,92.8,92.8,dining table,2.2,confirmed
+T02_toilet_angle.png,detect,detect,True,96.0,89.3,toilet,94.1,94.1,tv,0.4,confirmed
+T03_toilet_zero_case.png,detect,detect,True,96.0,89.9,toilet,92.4,92.4,tv,25.8,confirmed

@@ -1,0 +1,5 @@
+ultralytics==8.3.0
+coremltools==7.2
+oidv6==1.0.5
+roboflow==1.1.32
+opencv-python-headless==4.10.0.84

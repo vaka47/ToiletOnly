@@ -1,0 +1,7 @@
+path: /Users/vaka47/Dev/Приложение в туалете/ml/data/dataset_aug
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: toilet

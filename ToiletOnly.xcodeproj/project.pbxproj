@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		032990A70E40D466C1A9D6D3 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451DE3DB9EA5CF959B9473F0 /* ChatView.swift */; };
+		03F2A1174C10EAB52A1E4201 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2A1174C10EAB52A1E4200 /* ActivityView.swift */; };
+		04912AA0B6F64A2897D3F201 /* BlockedUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912AA0B6F64A2897D3F200 /* BlockedUsersView.swift */; };
+		0581B45B71A949E3A95D2101 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581B45B71A949E3A95D2100 /* ChatsView.swift */; };
+		0A8DE7B07D4F4104A1B61101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B27D4F4104A1B61101 /* Assets.xcassets */; };
+		0A8DE7B17D4F4104A1B61101 /* ToiletDetector.mlpackage in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlpackage */; };
+		0A8DE7B47D4F4104A1B61101 /* SceneGuard.mlpackage in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlpackage */; };
+		1628E1BF2C41BCCDFF065043 /* DatingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE7936E9FAB2EA9547BBB0 /* DatingModels.swift */; };
+		17FDDD0BA70ACC80B43D74BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B31A798B16C993D679DB9 /* AppDelegate.swift */; };
+		1B17656412E6576A9C0E8BFE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59353A59B697F4343288D1C9 /* ProfileView.swift */; };
+		28F8EEFE67DB5447FE3C40E0 /* ToiletDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B973B743B38C0239E9525 /* ToiletDetector.swift */; };
+		29386693CAF98783F78675C0 /* SelfieCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F044A4FA0286D321E94381 /* SelfieCameraController.swift */; };
+		3CACFC56C0A94EFA47FFD5DD /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4978CE1458BBD9235B93082 /* AppTheme.swift */; };
+		45BB669EE2FBB022B56C464F /* ToiletOnlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FCA77C186402A2A6B19F3B /* ToiletOnlyApp.swift */; };
+		46FBDB4C449667F87D192947 /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584820CAAC4D7AB5E62B6A83 /* ProfileSetupView.swift */; };
+		4AACE914C71BF758FF58EF4E /* VideoRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D707AD78520254A5772C9B04 /* VideoRecorder.swift */; };
+		4B817CD1497DE6F72F178E67 /* PingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651D9DF6C4AB6A4CF1B8C11 /* PingService.swift */; };
+		4BF99716479790E63F96B0F1 /* VideoRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBDA5166A40FCAE0E1AE5BF /* VideoRecorderView.swift */; };
+		4CA7AC8C76DE516841E5ACEB /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E64B454C5DC4EE6E0A991 /* ProfileCardView.swift */; };
+		4FC07E6BAC17559F0097B7ED /* AgeFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDB118D3F7584C86256D56 /* AgeFilterView.swift */; };
+		50FD59E7A1C2499895E14788 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E737D8A7F42F68DF7C8E0 /* ProfileInfoView.swift */; };
+		541E4B0F4A2A4CC2AA26D031 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF4112822E043A0A463E5D2 /* LikeService.swift */; };
+		55CE8D49E9A64A58AAC71F72 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881F77CC52C4F8DAF528D3A /* MatchService.swift */; };
+		574632B47C5983A5A7466E46 /* ProfileSetupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073AC22032CB044F74322F /* ProfileSetupService.swift */; };
+		59955031BF9E7883BBA65887 /* DatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E748F134C6F121B998D2D00 /* DatingViewModel.swift */; };
+		60E864740E27B4B9088A01D3 /* LiveDatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C16419C52AA5861DFD2768 /* LiveDatingView.swift */; };
+		61EDC046B3A3CE995BDA5B40 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D782E2D168F3681236920BD /* DeviceService.swift */; };
+		63FDAA3E0056EE1E224B1218 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2F926724CBA7E70428FF0 /* RootView.swift */; };
+		670881252572E62E87D22735 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEE6218E4A61F18A43C3855 /* AuthViewModel.swift */; };
+		6E2D991E1F6A4C4CA642D701 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2D991E1F6A4C4CA642D700 /* ActivityService.swift */; };
+		72FC49E79CC74E3799A6A201 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC49E79CC74E3799A6A200 /* ReportService.swift */; };
+		755F852EA5C570D3E4A01A9A /* ChatWebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B54C1C77BCC0DED488959CC /* ChatWebSocketService.swift */; };
+		7A0A2BC993E49B3AD13500B3 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F9F3C8C72E6BD250AB20E /* LocationService.swift */; };
+		8345A0B293FA97544E4A8068 /* AccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936E90FADCF0A3D18B21C73B /* AccessViewModel.swift */; };
+		8AB0671841FA50A6F8041B88 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA843B1D94EB31F594967D /* AuthService.swift */; };
+		93F08B9A23B699CA5BAB2232 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798B6A0ED703621826812377 /* AuthView.swift */; };
+		9960D3C3905FBA15AA301AE2 /* BlockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748FE446AED2ECADF90D19F4 /* BlockService.swift */; };
+		9B6AC707C3508516CE2CED9D /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D546CAB488F7D4429942843D /* MediaService.swift */; };
+		A219B7F22576BB85D690AFD8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCC17A1B0752A222A25A9AC /* APIClient.swift */; };
+		ABB7A574D97B35831B9FB502 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD256F2181F99F5C855A35E7 /* ProfileService.swift */; };
+		AEE2916692F3E25BBAC747C1 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCC24CE7EB3B292F07FAF1 /* CameraController.swift */; };
+		B5FF169C12B1C7A30D135AE6 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993CB52940251C3045EEC738 /* AppConfig.swift */; };
+		BCC3A32DE904FA755657629F /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C2E0290EC030529B44DF6F /* MessageService.swift */; };
+		BF38CBA09A6D8B1E24EBFC04 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AA67E0EEFB9AF1C55E5F4D /* SessionManager.swift */; };
+		D716C2F156BDFAE7EA89ABCA /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF0B53EA0BDBEDF85C3AC7 /* MainAppView.swift */; };
+		DCBD0744415A49B5ACCFBC98 /* SelfieCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FCFAEC3FF7B8C6C3B7077 /* SelfieCaptureView.swift */; };
+		EAF9E97F6A217A3E943DAD62 /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE4AA6D91FEDFF5139AEBC /* LockScreenView.swift */; };
+		F3B43A96D7C44675B2810B7E /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A664802D27B42DFB07E35C4 /* VideoService.swift */; };
+		F9AF91297C040CD2261603F8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC90C90112B137EC2EA65057 /* CameraView.swift */; };
+		FD12479D95C63EE2D8F2AF94 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF60425DF87203F1DDA828E8 /* ButtonStyles.swift */; };
+		FD8D5CE5E8B44D95AA59A69D /* VideoFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398F7EE7AC6945C2B93DB31B /* VideoFeedView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03F2A1174C10EAB52A1E4200 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		04912AA0B6F64A2897D3F200 /* BlockedUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersView.swift; sourceTree = "<group>"; };
+		0581B45B71A949E3A95D2100 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		0A8DE7B27D4F4104A1B61101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ToiletOnly/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper.mlpackage; path = ToiletOnly/Resources/ToiletDetector.mlpackage; sourceTree = SOURCE_ROOT; };
+		0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper.mlpackage; path = ToiletOnly/Resources/SceneGuard.mlpackage; sourceTree = SOURCE_ROOT; };
+		0651D9DF6C4AB6A4CF1B8C11 /* PingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingService.swift; sourceTree = "<group>"; };
+		0E2E737D8A7F42F68DF7C8E0 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
+		0EDDB118D3F7584C86256D56 /* AgeFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeFilterView.swift; sourceTree = "<group>"; };
+		1EF4112822E043A0A463E5D2 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
+		34BF0B53EA0BDBEDF85C3AC7 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		36AA67E0EEFB9AF1C55E5F4D /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		398F7EE7AC6945C2B93DB31B /* VideoFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedView.swift; sourceTree = "<group>"; };
+		3CBE4AA6D91FEDFF5139AEBC /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
+		3DBDA5166A40FCAE0E1AE5BF /* VideoRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecorderView.swift; sourceTree = "<group>"; };
+		451DE3DB9EA5CF959B9473F0 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4881F77CC52C4F8DAF528D3A /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
+		48CA843B1D94EB31F594967D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4E748F134C6F121B998D2D00 /* DatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingViewModel.swift; sourceTree = "<group>"; };
+		4F5F9F3C8C72E6BD250AB20E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		535E64B454C5DC4EE6E0A991 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
+		584820CAAC4D7AB5E62B6A83 /* ProfileSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupView.swift; sourceTree = "<group>"; };
+		59353A59B697F4343288D1C9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		6ABE7936E9FAB2EA9547BBB0 /* DatingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingModels.swift; sourceTree = "<group>"; };
+		6E2D991E1F6A4C4CA642D700 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		72FC49E79CC74E3799A6A200 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		748FE446AED2ECADF90D19F4 /* BlockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockService.swift; sourceTree = "<group>"; };
+		76C2E0290EC030529B44DF6F /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		798B6A0ED703621826812377 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		7B54C1C77BCC0DED488959CC /* ChatWebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWebSocketService.swift; sourceTree = "<group>"; };
+		8A073AC22032CB044F74322F /* ProfileSetupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupService.swift; sourceTree = "<group>"; };
+		8A664802D27B42DFB07E35C4 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		8D782E2D168F3681236920BD /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		92FCA77C186402A2A6B19F3B /* ToiletOnlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletOnlyApp.swift; sourceTree = "<group>"; };
+		936E90FADCF0A3D18B21C73B /* AccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessViewModel.swift; sourceTree = "<group>"; };
+		993CB52940251C3045EEC738 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		9BEE6218E4A61F18A43C3855 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		ADCC17A1B0752A222A25A9AC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B56B973B743B38C0239E9525 /* ToiletDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToiletDetector.swift; sourceTree = "<group>"; };
+		B5BCC24CE7EB3B292F07FAF1 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		BE4FCFAEC3FF7B8C6C3B7077 /* SelfieCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieCaptureView.swift; sourceTree = "<group>"; };
+		BE540AC4089B07840F8F2F27 /* ToiletOnly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToiletOnly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4978CE1458BBD9235B93082 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		CC90C90112B137EC2EA65057 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D546CAB488F7D4429942843D /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
+		D707AD78520254A5772C9B04 /* VideoRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecorder.swift; sourceTree = "<group>"; };
+		DD256F2181F99F5C855A35E7 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		DE8B31A798B16C993D679DB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E7F044A4FA0286D321E94381 /* SelfieCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieCameraController.swift; sourceTree = "<group>"; };
+		EDE2F926724CBA7E70428FF0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		EF60425DF87203F1DDA828E8 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		F8C16419C52AA5861DFD2768 /* LiveDatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDatingView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		03C47EBBF3C784BF8037A496 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				4F5F9F3C8C72E6BD250AB20E /* LocationService.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		1860938C03710E5186CA3AF3 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				D707AD78520254A5772C9B04 /* VideoRecorder.swift */,
+				3DBDA5166A40FCAE0E1AE5BF /* VideoRecorderView.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		21EA7D592F8D8108E7D010FB /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				36AA67E0EEFB9AF1C55E5F4D /* SessionManager.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		3829A87F629BDD8F81BBFAB4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE8B31A798B16C993D679DB9 /* AppDelegate.swift */,
+				92FCA77C186402A2A6B19F3B /* ToiletOnlyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3C9354921C3695325541115B /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B5BCC24CE7EB3B292F07FAF1 /* CameraController.swift */,
+				CC90C90112B137EC2EA65057 /* CameraView.swift */,
+				E7F044A4FA0286D321E94381 /* SelfieCameraController.swift */,
+				BE4FCFAEC3FF7B8C6C3B7077 /* SelfieCaptureView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		59B0219E0722708C07B721FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				936E90FADCF0A3D18B21C73B /* AccessViewModel.swift */,
+				3CBE4AA6D91FEDFF5139AEBC /* LockScreenView.swift */,
+				34BF0B53EA0BDBEDF85C3AC7 /* MainAppView.swift */,
+				EDE2F926724CBA7E70428FF0 /* RootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		82AF31D35FCE5F2E95A88614 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3829A87F629BDD8F81BBFAB4 /* App */,
+				8BDC70F912DB7D92FF939991 /* Auth */,
+				3C9354921C3695325541115B /* Camera */,
+				DE1D5659CE82719BD628728B /* Dating */,
+				EB705C0226D55DE7EE3113C8 /* Design */,
+				FE0AB42AEE149D6446A5D06F /* Detectors */,
+				03C47EBBF3C784BF8037A496 /* Location */,
+				F16566755EC33CAAC638D059 /* Networking */,
+				21EA7D592F8D8108E7D010FB /* Session */,
+				1860938C03710E5186CA3AF3 /* Video */,
+				59B0219E0722708C07B721FF /* Views */,
+			);
+			name = Sources;
+			path = ToiletOnly/Sources;
+			sourceTree = "<group>";
+		};
+		8BDC70F912DB7D92FF939991 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				798B6A0ED703621826812377 /* AuthView.swift */,
+				9BEE6218E4A61F18A43C3855 /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		ACB68BD39338E5EF8C49189F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03F2A1174C10EAB52A1E4200 /* ActivityView.swift */,
+				0EDDB118D3F7584C86256D56 /* AgeFilterView.swift */,
+				04912AA0B6F64A2897D3F200 /* BlockedUsersView.swift */,
+				EF60425DF87203F1DDA828E8 /* ButtonStyles.swift */,
+				451DE3DB9EA5CF959B9473F0 /* ChatView.swift */,
+				0581B45B71A949E3A95D2100 /* ChatsView.swift */,
+				F8C16419C52AA5861DFD2768 /* LiveDatingView.swift */,
+				535E64B454C5DC4EE6E0A991 /* ProfileCardView.swift */,
+				0E2E737D8A7F42F68DF7C8E0 /* ProfileInfoView.swift */,
+				584820CAAC4D7AB5E62B6A83 /* ProfileSetupView.swift */,
+				59353A59B697F4343288D1C9 /* ProfileView.swift */,
+				398F7EE7AC6945C2B93DB31B /* VideoFeedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE1D5659CE82719BD628728B /* Dating */ = {
+			isa = PBXGroup;
+			children = (
+				6ABE7936E9FAB2EA9547BBB0 /* DatingModels.swift */,
+				4E748F134C6F121B998D2D00 /* DatingViewModel.swift */,
+				ACB68BD39338E5EF8C49189F /* Views */,
+			);
+			path = Dating;
+			sourceTree = "<group>";
+		};
+		DF5FA2B15E66FE20F3D64DEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE540AC4089B07840F8F2F27 /* ToiletOnly.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB705C0226D55DE7EE3113C8 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				C4978CE1458BBD9235B93082 /* AppTheme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		F099FD6E6C4BFEF73147F510 = {
+			isa = PBXGroup;
+			children = (
+				0A8DE7B27D4F4104A1B61101 /* Assets.xcassets */,
+				0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlpackage */,
+				0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlpackage */,
+				82AF31D35FCE5F2E95A88614 /* Sources */,
+				DF5FA2B15E66FE20F3D64DEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F16566755EC33CAAC638D059 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ADCC17A1B0752A222A25A9AC /* APIClient.swift */,
+				6E2D991E1F6A4C4CA642D700 /* ActivityService.swift */,
+				993CB52940251C3045EEC738 /* AppConfig.swift */,
+				48CA843B1D94EB31F594967D /* AuthService.swift */,
+				748FE446AED2ECADF90D19F4 /* BlockService.swift */,
+				7B54C1C77BCC0DED488959CC /* ChatWebSocketService.swift */,
+				8D782E2D168F3681236920BD /* DeviceService.swift */,
+				1EF4112822E043A0A463E5D2 /* LikeService.swift */,
+				4881F77CC52C4F8DAF528D3A /* MatchService.swift */,
+				D546CAB488F7D4429942843D /* MediaService.swift */,
+				76C2E0290EC030529B44DF6F /* MessageService.swift */,
+				0651D9DF6C4AB6A4CF1B8C11 /* PingService.swift */,
+				DD256F2181F99F5C855A35E7 /* ProfileService.swift */,
+				8A073AC22032CB044F74322F /* ProfileSetupService.swift */,
+				72FC49E79CC74E3799A6A200 /* ReportService.swift */,
+				8A664802D27B42DFB07E35C4 /* VideoService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FE0AB42AEE149D6446A5D06F /* Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				B56B973B743B38C0239E9525 /* ToiletDetector.swift */,
+			);
+			path = Detectors;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		799FAC051A0EE676008D62AE /* ToiletOnly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 798B1B6852A456334CF2D9FB /* Build configuration list for PBXNativeTarget "ToiletOnly" */;
+			buildPhases = (
+				C8ABADDCA5BAFBCE3C98BB11 /* Sources */,
+				A58598B7A5189649A8A3D9D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ToiletOnly;
+			packageProductDependencies = (
+			);
+			productName = ToiletOnly;
+			productReference = BE540AC4089B07840F8F2F27 /* ToiletOnly.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D320057B2D1410BA7862EBE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 62BC2D5ACFC100D0A39AFB44 /* Build configuration list for PBXProject "ToiletOnly" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F099FD6E6C4BFEF73147F510;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				799FAC051A0EE676008D62AE /* ToiletOnly */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A58598B7A5189649A8A3D9D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A8DE7B07D4F4104A1B61101 /* Assets.xcassets in Resources */,
+				0A8DE7B17D4F4104A1B61101 /* ToiletDetector.mlpackage in Resources */,
+				0A8DE7B47D4F4104A1B61101 /* SceneGuard.mlpackage in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8ABADDCA5BAFBCE3C98BB11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A219B7F22576BB85D690AFD8 /* APIClient.swift in Sources */,
+				8345A0B293FA97544E4A8068 /* AccessViewModel.swift in Sources */,
+				03F2A1174C10EAB52A1E4201 /* ActivityView.swift in Sources */,
+				6E2D991E1F6A4C4CA642D701 /* ActivityService.swift in Sources */,
+				4FC07E6BAC17559F0097B7ED /* AgeFilterView.swift in Sources */,
+				B5FF169C12B1C7A30D135AE6 /* AppConfig.swift in Sources */,
+				17FDDD0BA70ACC80B43D74BA /* AppDelegate.swift in Sources */,
+				3CACFC56C0A94EFA47FFD5DD /* AppTheme.swift in Sources */,
+				8AB0671841FA50A6F8041B88 /* AuthService.swift in Sources */,
+				93F08B9A23B699CA5BAB2232 /* AuthView.swift in Sources */,
+				670881252572E62E87D22735 /* AuthViewModel.swift in Sources */,
+				9960D3C3905FBA15AA301AE2 /* BlockService.swift in Sources */,
+				04912AA0B6F64A2897D3F201 /* BlockedUsersView.swift in Sources */,
+				FD12479D95C63EE2D8F2AF94 /* ButtonStyles.swift in Sources */,
+				AEE2916692F3E25BBAC747C1 /* CameraController.swift in Sources */,
+				F9AF91297C040CD2261603F8 /* CameraView.swift in Sources */,
+				032990A70E40D466C1A9D6D3 /* ChatView.swift in Sources */,
+				0581B45B71A949E3A95D2101 /* ChatsView.swift in Sources */,
+				755F852EA5C570D3E4A01A9A /* ChatWebSocketService.swift in Sources */,
+				1628E1BF2C41BCCDFF065043 /* DatingModels.swift in Sources */,
+				59955031BF9E7883BBA65887 /* DatingViewModel.swift in Sources */,
+				61EDC046B3A3CE995BDA5B40 /* DeviceService.swift in Sources */,
+				60E864740E27B4B9088A01D3 /* LiveDatingView.swift in Sources */,
+				7A0A2BC993E49B3AD13500B3 /* LocationService.swift in Sources */,
+				541E4B0F4A2A4CC2AA26D031 /* LikeService.swift in Sources */,
+				EAF9E97F6A217A3E943DAD62 /* LockScreenView.swift in Sources */,
+				D716C2F156BDFAE7EA89ABCA /* MainAppView.swift in Sources */,
+				55CE8D49E9A64A58AAC71F72 /* MatchService.swift in Sources */,
+				9B6AC707C3508516CE2CED9D /* MediaService.swift in Sources */,
+				BCC3A32DE904FA755657629F /* MessageService.swift in Sources */,
+				4B817CD1497DE6F72F178E67 /* PingService.swift in Sources */,
+				4CA7AC8C76DE516841E5ACEB /* ProfileCardView.swift in Sources */,
+				50FD59E7A1C2499895E14788 /* ProfileInfoView.swift in Sources */,
+				ABB7A574D97B35831B9FB502 /* ProfileService.swift in Sources */,
+				574632B47C5983A5A7466E46 /* ProfileSetupService.swift in Sources */,
+				46FBDB4C449667F87D192947 /* ProfileSetupView.swift in Sources */,
+				1B17656412E6576A9C0E8BFE /* ProfileView.swift in Sources */,
+				72FC49E79CC74E3799A6A201 /* ReportService.swift in Sources */,
+				63FDAA3E0056EE1E224B1218 /* RootView.swift in Sources */,
+				29386693CAF98783F78675C0 /* SelfieCameraController.swift in Sources */,
+				DCBD0744415A49B5ACCFBC98 /* SelfieCaptureView.swift in Sources */,
+				BF38CBA09A6D8B1E24EBFC04 /* SessionManager.swift in Sources */,
+				28F8EEFE67DB5447FE3C40E0 /* ToiletDetector.swift in Sources */,
+				45BB669EE2FBB022B56C464F /* ToiletOnlyApp.swift in Sources */,
+				FD8D5CE5E8B44D95AA59A69D /* VideoFeedView.swift in Sources */,
+				4AACE914C71BF758FF58EF4E /* VideoRecorder.swift in Sources */,
+				4BF99716479790E63F96B0F1 /* VideoRecorderView.swift in Sources */,
+				F3B43A96D7C44675B2810B7E /* VideoService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3A884B123B5D7865B1EEA1D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+					CODE_SIGN_IDENTITY = "Apple Development";
+					CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4T38KX23L;
+					INFOPLIST_FILE = ToiletOnly/Info.plist;
+					IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					LD_RUNPATH_SEARCH_PATHS = (
+						"$(inherited)",
+						"@executable_path/Frameworks",
+					);
+					SDKROOT = iphoneos;
+					TARGETED_DEVICE_FAMILY = 1;
+				};
+			name = Release;
+		};
+		7397A2474741B71E6EDEF07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ToiletOnly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toiletonly.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+			8D245C56E84B2F7CA6269705 /* Debug */ = {
+				isa = XCBuildConfiguration;
+				buildSettings = {
+					ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+					CODE_SIGN_IDENTITY = "Apple Development";
+					CODE_SIGN_STYLE = Automatic;
+					DEVELOPMENT_TEAM = S4T38KX23L;
+					ENABLE_DEBUG_DYLIB = NO;
+					INFOPLIST_FILE = ToiletOnly/Info.plist;
+					IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					LD_RUNPATH_SEARCH_PATHS = (
+						"$(inherited)",
+						"@executable_path/Frameworks",
+					);
+					SDKROOT = iphoneos;
+					TARGETED_DEVICE_FAMILY = 1;
+				};
+			name = Debug;
+		};
+		A880C90C913185BFBF7F4FF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ToiletOnly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toiletonly.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62BC2D5ACFC100D0A39AFB44 /* Build configuration list for PBXProject "ToiletOnly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7397A2474741B71E6EDEF07B /* Debug */,
+				A880C90C913185BFBF7F4FF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		798B1B6852A456334CF2D9FB /* Build configuration list for PBXNativeTarget "ToiletOnly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D245C56E84B2F7CA6269705 /* Debug */,
+				3A884B123B5D7865B1EEA1D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D320057B2D1410BA7862EBE0 /* Project object */;
+}

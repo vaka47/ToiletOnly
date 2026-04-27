@@ -1,0 +1,6 @@
+train: /Volumes/Untitled/ToiletML/data/lists_v4/train.txt
+val: /Volumes/Untitled/ToiletML/data/lists_v4/val.txt
+test: /Volumes/Untitled/ToiletML/data/lists_v4/test.txt
+
+names:
+  0: toilet

@@ -1,0 +1,18 @@
+# Objects365 class names for high-value toilet hard negatives
+Chair
+Stool
+Cabinet/shelf
+Refrigerator
+Bed
+Towel
+Mirror
+Sink
+Bathtub
+Nightstand
+Toilet Paper
+Washing Machine/Drying Machine
+Dishwasher
+Urinal
+Trash bin Can
+Cleaning Products
+Showerhead
