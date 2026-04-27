@@ -16,6 +16,7 @@ DerivedData/
 
 # Keep nested repo metadata out of monorepo
 ToiletOnly/.git/
+ToiletOnly/.git_nested_backup/
 
 # Large local datasets/artifacts not required for project source
 ml/data/dataset/
