@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Optional
+
 from jose import jwt
 from fastapi import WebSocket
 from sqlalchemy import select, and_, or_
@@ -9,7 +11,7 @@ from ..models import Match, Block, MatchStatus
 from ..services.match_policy import ensure_participant_states, apply_status_from_states
 
 
-def _extract_user_id(auth_header: str | None) -> str | None:
+def _extract_user_id(auth_header: Optional[str]) -> Optional[str]:
     if not auth_header or not auth_header.lower().startswith("bearer "):
         return None
     token = auth_header.split(" ", 1)[1]

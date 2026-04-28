@@ -205,56 +205,111 @@ final class DatingViewModel: ObservableObject {
         matches.removeAll { $0.status == .expired }
     }
 
-    private static let sampleProfiles: [DatingProfile] = [
-        DatingProfile(
-            id: UUID(),
-            remoteUserId: UUID().uuidString,
-            name: "Лера",
-            age: 22,
-            hideAge: false,
-            gender: "female",
-            bio: "Собираю мемы, гоняю ночные чаты и ищу человека, который тоже не боится странных вопросов.",
-            photos: ["toilet_1", "photo_1", "photo_2"],
-            sessionVideoURL: nil,
-            toiletSelfieIndex: 0,
-            tags: ["мемы", "кино", "сарказм"],
-            isOnline: true,
-            distanceKm: 2.1,
-            sessionExpiresAt: Date().addingTimeInterval(11 * 60)
-        ),
-        DatingProfile(
-            id: UUID(),
-            remoteUserId: UUID().uuidString,
-            name: "Даня",
-            age: 28,
-            hideAge: false,
-            gender: "male",
-            bio: "Здесь только по делу: быстро отвечаю, люблю дерзкий юмор и честные вайбы.",
-            photos: ["toilet_2", "photo_3", "photo_4"],
-            sessionVideoURL: nil,
-            toiletSelfieIndex: 0,
-            tags: ["флирт", "спорт", "техно"],
-            isOnline: true,
-            distanceKm: 5.4,
-            sessionExpiresAt: Date().addingTimeInterval(7 * 60)
-        ),
-        DatingProfile(
-            id: UUID(),
-            remoteUserId: UUID().uuidString,
-            name: "Саша",
-            age: 31,
-            hideAge: false,
-            gender: "female",
-            bio: "Если ты здесь, значит время для самых странных, но искренних знакомств.",
-            photos: ["toilet_3", "photo_5", "photo_6"],
-            sessionVideoURL: nil,
-            toiletSelfieIndex: 0,
-            tags: ["ирония", "музыка", "ночь"],
-            isOnline: false,
-            distanceKm: nil,
-            sessionExpiresAt: nil
-        )
-    ]
+    private static var sampleProfiles: [DatingProfile] {
+        if Locale.preferredLanguages.first?.lowercased().hasPrefix("ru") == true {
+            return [
+                DatingProfile(
+                    id: UUID(),
+                    remoteUserId: UUID().uuidString,
+                    name: "Лера",
+                    age: 22,
+                    hideAge: false,
+                    gender: "female",
+                    bio: "Собираю мемы, гоняю ночные чаты и ищу человека, который тоже не боится странных вопросов.",
+                    photos: ["toilet_1", "photo_1", "photo_2"],
+                    sessionVideoURL: nil,
+                    toiletSelfieIndex: 0,
+                    tags: ["мемы", "кино", "сарказм"],
+                    isOnline: true,
+                    distanceKm: 2.1,
+                    sessionExpiresAt: Date().addingTimeInterval(11 * 60)
+                ),
+                DatingProfile(
+                    id: UUID(),
+                    remoteUserId: UUID().uuidString,
+                    name: "Даня",
+                    age: 28,
+                    hideAge: false,
+                    gender: "male",
+                    bio: "Здесь только по делу: быстро отвечаю, люблю дерзкий юмор и честные вайбы.",
+                    photos: ["toilet_2", "photo_3", "photo_4"],
+                    sessionVideoURL: nil,
+                    toiletSelfieIndex: 0,
+                    tags: ["флирт", "спорт", "техно"],
+                    isOnline: true,
+                    distanceKm: 5.4,
+                    sessionExpiresAt: Date().addingTimeInterval(7 * 60)
+                ),
+                DatingProfile(
+                    id: UUID(),
+                    remoteUserId: UUID().uuidString,
+                    name: "Саша",
+                    age: 31,
+                    hideAge: false,
+                    gender: "female",
+                    bio: "Если ты здесь, значит время для самых странных, но искренних знакомств.",
+                    photos: ["toilet_3", "photo_5", "photo_6"],
+                    sessionVideoURL: nil,
+                    toiletSelfieIndex: 0,
+                    tags: ["ирония", "музыка", "ночь"],
+                    isOnline: false,
+                    distanceKm: nil,
+                    sessionExpiresAt: nil
+                )
+            ]
+        }
+
+        return [
+            DatingProfile(
+                id: UUID(),
+                remoteUserId: UUID().uuidString,
+                name: "Ava",
+                age: 23,
+                hideAge: false,
+                gender: "female",
+                bio: "Collecting memes, starting reckless late-night chats, and looking for someone who is good with weird questions.",
+                photos: ["toilet_1", "photo_1", "photo_2"],
+                sessionVideoURL: nil,
+                toiletSelfieIndex: 0,
+                tags: ["memes", "movies", "sarcasm"],
+                isOnline: true,
+                distanceKm: 1.9,
+                sessionExpiresAt: Date().addingTimeInterval(11 * 60)
+            ),
+            DatingProfile(
+                id: UUID(),
+                remoteUserId: UUID().uuidString,
+                name: "Miles",
+                age: 29,
+                hideAge: false,
+                gender: "male",
+                bio: "Fast replies, sharp humor, and zero patience for boring small talk. If the vibe is real, I am in.",
+                photos: ["toilet_2", "photo_3", "photo_4"],
+                sessionVideoURL: nil,
+                toiletSelfieIndex: 0,
+                tags: ["flirting", "fitness", "techno"],
+                isOnline: true,
+                distanceKm: 4.8,
+                sessionExpiresAt: Date().addingTimeInterval(7 * 60)
+            ),
+            DatingProfile(
+                id: UUID(),
+                remoteUserId: UUID().uuidString,
+                name: "Chloe",
+                age: 31,
+                hideAge: false,
+                gender: "female",
+                bio: "If you are here, we probably both like the kind of chemistry that starts strange and turns honest fast.",
+                photos: ["toilet_3", "photo_5", "photo_6"],
+                sessionVideoURL: nil,
+                toiletSelfieIndex: 0,
+                tags: ["wit", "music", "night owl"],
+                isOnline: false,
+                distanceKm: nil,
+                sessionExpiresAt: nil
+            )
+        ]
+    }
 
     private static let iso8601WithFractional: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()

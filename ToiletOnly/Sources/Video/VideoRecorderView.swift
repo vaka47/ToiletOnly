@@ -11,6 +11,9 @@ struct VideoRecorderView: View {
     @State private var showNSFWAlert: Bool = false
     @State private var showFaceAlert: Bool = false
     @State private var showFaceLostAlert: Bool = false
+    @State private var showCameraDeniedAlert: Bool = false
+    @State private var showPublishErrorAlert: Bool = false
+    @State private var publishErrorText: String = ""
     @State private var caption: String = ""
 
     var body: some View {
@@ -65,7 +68,18 @@ struct VideoRecorderView: View {
         } message: {
             Text(L10n.text("Запись остановлена автоматически. Держи лицо в кадре без выпадений.", "Recording stopped automatically. Keep your face in frame at all times."))
         }
+        .alert(L10n.text("Нет доступа к камере", "Camera access required"), isPresented: $showCameraDeniedAlert) {
+            Button(L10n.text("Ок", "OK"), role: .cancel) {}
+        } message: {
+            Text(L10n.text("Разреши камеру и микрофон в настройках iPhone, чтобы записывать видео.", "Allow camera and microphone access in iPhone settings to record videos."))
+        }
+        .alert(L10n.text("Не удалось опубликовать видео", "Failed to publish video"), isPresented: $showPublishErrorAlert) {
+            Button(L10n.text("Ок", "OK"), role: .cancel) {}
+        } message: {
+            Text(publishErrorText.isEmpty ? L10n.text("Попробуй еще раз через пару секунд.", "Try again in a few seconds.") : publishErrorText)
+        }
         .onAppear {
+            recorder.prepareForPresentation()
             recorder.startSession()
         }
         .onDisappear {
@@ -73,6 +87,26 @@ struct VideoRecorderView: View {
         }
         .onChange(of: recorder.didStopBecauseFaceLost) { newValue in
             showFaceLostAlert = newValue
+        }
+        .onChange(of: recorder.cameraAccessDenied) { newValue in
+            showCameraDeniedAlert = newValue
+        }
+        .onChange(of: recorder.lastErrorMessage) { newValue in
+            guard let newValue else { return }
+            if newValue == "camera_denied" {
+                showCameraDeniedAlert = true
+            } else if newValue == "camera_preparing" {
+                publishErrorText = L10n.text("Камера еще запускается. Подожди секунду и нажми запись снова.", "The camera is still starting. Wait a second and tap record again.")
+                showPublishErrorAlert = true
+            } else if newValue == "record_face_required" {
+                showFaceAlert = true
+            } else if newValue == "camera_missing" {
+                publishErrorText = L10n.text("Камера недоступна на этом устройстве.", "Camera is unavailable on this device.")
+                showPublishErrorAlert = true
+            } else {
+                publishErrorText = newValue
+                showPublishErrorAlert = true
+            }
         }
     }
 
@@ -93,6 +127,9 @@ struct VideoRecorderView: View {
             Spacer()
 
             pill(L10n.text("До 60 сек", "Up to 60 sec"), tint: AppTheme.mango)
+            if !recorder.isSessionReady {
+                pill(L10n.text("Камера готовится", "Preparing camera"), tint: AppTheme.sky)
+            }
             pill(recorder.faceStatusText, tint: recorder.isFaceVisible ? AppTheme.mint : AppTheme.coral)
         }
     }
@@ -201,6 +238,9 @@ struct VideoRecorderView: View {
         HStack(alignment: .center, spacing: 16) {
             if recorder.lastVideoURL != nil, !recorder.isRecording {
                 Button {
+                    uploadSuccess = false
+                    caption = ""
+                    recorder.resetDraft()
                     recorder.startRecording()
                 } label: {
                     Label(L10n.text("Переснять", "Retake"), systemImage: "arrow.counterclockwise")
@@ -234,8 +274,8 @@ struct VideoRecorderView: View {
                 }
             }
             .buttonStyle(.plain)
-            .disabled(!recorder.isRecording && !recorder.isFaceVisible)
-            .opacity((!recorder.isRecording && !recorder.isFaceVisible) ? 0.58 : 1)
+            .disabled(isUploading)
+            .opacity(isUploading ? 0.58 : 1)
 
             if recorder.lastVideoURL != nil, !recorder.isRecording {
                 Button {
@@ -275,18 +315,31 @@ struct VideoRecorderView: View {
         isUploading = true
         do {
             let assetURL = try await MediaService.shared.uploadVideo(token: token, fileURL: url, purpose: "session_video")
-            await ProfileService.shared.updateSessionVideo(
+            let ok = try await ProfileService.shared.updateSessionVideo(
                 token: token,
                 assetURL: assetURL,
                 caption: caption.trimmingCharacters(in: .whitespacesAndNewlines)
             )
-            uploadSuccess = true
+            if ok {
+                uploadSuccess = true
+            } else {
+                publishErrorText = L10n.text("Сервер не подтвердил публикацию видео.", "The server did not confirm video publication.")
+                showPublishErrorAlert = true
+            }
         } catch UploadError.nsfwDetected {
             showNSFWAlert = true
         } catch UploadError.faceRequired {
             showFaceAlert = true
+        } catch let error as APIClientError {
+            if error.detail == "inactive_session" {
+                publishErrorText = L10n.text("Сессия уже закончилась. Наведи камеру на унитаз еще раз и открой новую.", "The session has already ended. Point the camera at the toilet again to start a new one.")
+            } else {
+                publishErrorText = error.localizedDescription
+            }
+            showPublishErrorAlert = true
         } catch {
-            print("Session video publish failed: \(error)")
+            publishErrorText = error.localizedDescription
+            showPublishErrorAlert = true
         }
         isUploading = false
     }

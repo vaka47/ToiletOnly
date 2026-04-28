@@ -95,32 +95,36 @@ struct ActivityView: View {
                 .environmentObject(authViewModel)
         }
         .task {
+            await ActivityService.shared.markRead(scope: "activity", token: authViewModel.token())
             await reload()
         }
     }
 
     private var header: some View {
-        HStack(alignment: .top) {
-            VStack(alignment: .leading, spacing: 6) {
-                Text(L10n.text("Активность", "Activity"))
-                    .font(.system(size: 30, weight: .bold, design: .rounded))
-                    .foregroundColor(AppTheme.ink)
-                Text(L10n.text("Все сигналы интереса в одном месте.", "All signals of interest in one place."))
-                    .font(.callout)
-                    .foregroundColor(AppTheme.muted)
+        AppCard {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(L10n.text("Активность", "Activity"))
+                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .foregroundColor(AppTheme.ink)
+                    Text(L10n.text("Все сигналы интереса в одном месте.", "All signals of interest in one place."))
+                        .font(.callout)
+                        .foregroundColor(AppTheme.muted)
+                }
+                Spacer()
+                Button {
+                    Task { await reload() }
+                } label: {
+                    Image(systemName: "arrow.clockwise")
+                        .font(.system(size: 18, weight: .semibold))
+                        .frame(width: 42, height: 42)
+                        .background(Color.white.opacity(0.74))
+                        .background(.ultraThinMaterial, in: Circle())
+                        .foregroundColor(AppTheme.ink)
+                        .clipShape(Circle())
+                }
+                .buttonStyle(.plain)
             }
-            Spacer()
-            Button {
-                Task { await reload() }
-            } label: {
-                Image(systemName: "arrow.clockwise")
-                    .font(.system(size: 18, weight: .semibold))
-                    .frame(width: 42, height: 42)
-                    .background(Color.white.opacity(0.82))
-                    .foregroundColor(AppTheme.ink)
-                    .clipShape(Circle())
-            }
-            .buttonStyle(.plain)
         }
         .padding(.horizontal, 16)
     }

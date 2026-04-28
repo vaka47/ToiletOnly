@@ -2,15 +2,16 @@ import SwiftUI
 import Foundation
 
 enum AppTheme {
-    static let ink = Color(red: 0.10, green: 0.11, blue: 0.16)
-    static let cream = Color(red: 0.98, green: 0.96, blue: 0.92)
-    static let coral = Color(red: 0.96, green: 0.38, blue: 0.34)
-    static let mango = Color(red: 0.98, green: 0.72, blue: 0.33)
-    static let mint = Color(red: 0.20, green: 0.72, blue: 0.60)
-    static let sky = Color(red: 0.22, green: 0.54, blue: 0.95)
-    static let panel = Color.white.opacity(0.78)
-    static let shadow = Color.black.opacity(0.10)
-    static let muted = Color.black.opacity(0.56)
+    static let ink = Color(red: 0.08, green: 0.09, blue: 0.13)
+    static let cream = Color(red: 0.98, green: 0.97, blue: 0.94)
+    static let coral = Color(red: 0.96, green: 0.39, blue: 0.35)
+    static let mango = Color(red: 0.97, green: 0.72, blue: 0.36)
+    static let mint = Color(red: 0.21, green: 0.69, blue: 0.58)
+    static let sky = Color(red: 0.24, green: 0.52, blue: 0.90)
+    static let panel = Color.white.opacity(0.68)
+    static let panelStrong = Color.white.opacity(0.84)
+    static let shadow = Color.black.opacity(0.12)
+    static let muted = Color.black.opacity(0.58)
 
     static let accentGradient = LinearGradient(
         colors: [coral, mango],
@@ -30,32 +31,45 @@ struct AppBackground: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color(red: 1.0, green: 0.99, blue: 0.98),
-                    Color(red: 0.98, green: 0.95, blue: 0.90),
-                    Color(red: 0.93, green: 0.96, blue: 0.99)
+                    Color(red: 0.99, green: 0.98, blue: 0.96),
+                    Color(red: 0.97, green: 0.94, blue: 0.89),
+                    Color(red: 0.92, green: 0.95, blue: 0.98)
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
 
-            Circle()
-                .fill(AppTheme.coral.opacity(0.14))
-                .frame(width: 320, height: 320)
-                .blur(radius: 28)
-                .offset(x: -170, y: -240)
+            Ellipse()
+                .fill(
+                    LinearGradient(
+                        colors: [AppTheme.coral.opacity(0.20), AppTheme.mango.opacity(0.10)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .frame(width: 360, height: 280)
+                .blur(radius: 36)
+                .offset(x: -160, y: -260)
 
             Circle()
-                .fill(AppTheme.sky.opacity(0.12))
+                .fill(AppTheme.sky.opacity(0.13))
                 .frame(width: 340, height: 340)
-                .blur(radius: 32)
-                .offset(x: 160, y: 250)
+                .blur(radius: 34)
+                .offset(x: 180, y: 220)
 
-            RoundedRectangle(cornerRadius: 48)
+            RoundedRectangle(cornerRadius: 58, style: .continuous)
                 .fill(AppTheme.mint.opacity(0.08))
-                .frame(width: 360, height: 200)
-                .rotationEffect(.degrees(-12))
-                .offset(x: 150, y: -10)
+                .frame(width: 380, height: 220)
+                .rotationEffect(.degrees(-11))
+                .offset(x: 150, y: -8)
+
+            RoundedRectangle(cornerRadius: 80, style: .continuous)
+                .fill(Color.white.opacity(0.16))
+                .frame(width: 420, height: 180)
+                .rotationEffect(.degrees(18))
+                .blur(radius: 18)
+                .offset(x: -180, y: 260)
         }
     }
 }
@@ -71,9 +85,10 @@ struct AppCard<Content: View>: View {
         content
             .padding(16)
             .background(
-                RoundedRectangle(cornerRadius: 20)
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
                     .fill(AppTheme.panel)
-                    .shadow(color: AppTheme.shadow, radius: 18, x: 0, y: 10)
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+                    .shadow(color: AppTheme.shadow, radius: 20, x: 0, y: 12)
             )
     }
 }

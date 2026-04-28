@@ -21,6 +21,16 @@ struct ActivityItemDTO: Decodable, Identifiable {
     let created_at: String
 }
 
+struct InboxSummaryDTO: Decodable {
+    let unread_activity_count: Int
+    let unread_likes_count: Int
+    let unread_matches_count: Int
+}
+
+struct InboxReadRequest: Encodable {
+    let scope: String
+}
+
 final class ActivityService {
     static let shared = ActivityService()
 
@@ -39,4 +49,36 @@ final class ActivityService {
             return []
         }
     }
+
+    func summary(token: String?) async -> InboxSummaryDTO {
+        guard let token else {
+            return InboxSummaryDTO(unread_activity_count: 0, unread_likes_count: 0, unread_matches_count: 0)
+        }
+        do {
+            let item: InboxSummaryDTO = try await APIClient.shared.request("/activity/summary", token: token)
+            return item
+        } catch {
+            print("Inbox summary failed: \(error)")
+            return InboxSummaryDTO(unread_activity_count: 0, unread_likes_count: 0, unread_matches_count: 0)
+        }
+    }
+
+    func markRead(scope: String, token: String?) async {
+        guard let token else { return }
+        do {
+            let _: EmptyReadResponse = try await APIClient.shared.request(
+                "/activity/read",
+                method: "POST",
+                token: token,
+                body: InboxReadRequest(scope: scope)
+            )
+        } catch {
+            print("Inbox read failed: \(error)")
+        }
+    }
+}
+
+private struct EmptyReadResponse: Decodable {
+    let ok: Bool?
+    let scope: String?
 }

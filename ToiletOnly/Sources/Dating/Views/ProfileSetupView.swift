@@ -12,7 +12,7 @@ struct ProfileSetupView: View {
     @State private var lookingFor: [String] = []
     @State private var bioText: String = ""
     @State private var tone: String = "meme"
-    @State private var interestsText: String = "мемы, чат, вайб"
+    @State private var interestsText: String = L10n.text("мемы, чат, вайб", "memes, chats, vibe")
     @State private var selfieURL: String = ""
     @State private var additionalItems: [PhotosPickerItem] = []
     @State private var additionalPhotoURLs: [String] = []

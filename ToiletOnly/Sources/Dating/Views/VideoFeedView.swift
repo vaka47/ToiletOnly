@@ -4,6 +4,7 @@ import AVKit
 struct VideoFeedView: View {
     @ObservedObject var viewModel: DatingViewModel
     @EnvironmentObject private var authViewModel: AuthViewModel
+    @EnvironmentObject private var sessionManager: SessionManager
     @StateObject private var recorder = VideoRecorder()
     @AppStorage("hidden_video_ids_v1") private var hiddenVideoIDsStorage: String = ""
 
@@ -16,6 +17,7 @@ struct VideoFeedView: View {
     @State private var sortBy: String = "popular"
     @State private var selectedVideo: VideoDTO?
     @State private var showRecorder: Bool = false
+    @State private var showSessionRequiredAlert: Bool = false
 
     private let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -50,7 +52,7 @@ struct VideoFeedView: View {
             }
 
             Button {
-                showRecorder = true
+                openRecorderIfAllowed()
             } label: {
                 ZStack {
                     Circle()
@@ -133,6 +135,11 @@ struct VideoFeedView: View {
         }) {
             VideoRecorderView(recorder: recorder, token: authViewModel.token())
         }
+        .alert(L10n.text("Нужна активная сессия", "Active session required"), isPresented: $showSessionRequiredAlert) {
+            Button(L10n.text("Ок", "OK"), role: .cancel) {}
+        } message: {
+            Text(L10n.text("Снять и выложить видео можно только пока туалетная сессия еще активна.", "You can record and publish videos only while the toilet session is still active."))
+        }
         .task {
             await reload()
         }
@@ -152,52 +159,54 @@ struct VideoFeedView: View {
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(L10n.text("Видео", "Videos"))
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
-                        .foregroundColor(AppTheme.ink)
-                    Text(
-                        L10n.text(
-                            "Лента активных сессий рядом. Открываешь ролик и уже оттуда решаешь: смотреть, лайкать видео или идти в мэтч.",
-                            "A feed of active nearby sessions. Open a clip and decide whether to watch, react, or turn it into a match."
+        AppCard {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(L10n.text("Видео", "Videos"))
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .foregroundColor(AppTheme.ink)
+                        Text(
+                            L10n.text(
+                                "Лента активных сессий рядом. Открываешь ролик и уже оттуда решаешь: смотреть, лайкать видео или идти в мэтч.",
+                                "A feed of active nearby sessions. Open a clip and decide whether to watch, react, or turn it into a match."
+                            )
                         )
-                    )
-                    .font(.callout)
-                    .foregroundColor(AppTheme.muted)
-                }
-                Spacer(minLength: 12)
-                HStack(spacing: 10) {
-                    iconButton(showFilters ? "slider.horizontal.3" : "slider.horizontal.3") {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.86)) {
-                            showFilters.toggle()
+                        .font(.callout)
+                        .foregroundColor(AppTheme.muted)
+                    }
+                    Spacer(minLength: 12)
+                    HStack(spacing: 10) {
+                        iconButton("slider.horizontal.3") {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.86)) {
+                                showFilters.toggle()
+                            }
+                        }
+                        iconButton("arrow.clockwise") {
+                            Task { await reload() }
                         }
                     }
-                    iconButton("arrow.clockwise") {
-                        Task { await reload() }
-                    }
                 }
-            }
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    filterChip(
-                        title: targetGender == "any" ? L10n.text("Любой гендер", "Any gender") : localizedGender(targetGender),
-                        tint: AppTheme.sky
-                    )
-                    filterChip(
-                        title: L10n.text("\(Int(minAge))-\(Int(maxAge)) лет", "\(Int(minAge))-\(Int(maxAge)) years"),
-                        tint: AppTheme.mint
-                    )
-                    filterChip(
-                        title: L10n.text("Радиус \(Int(radiusKm)) км", "Radius \(Int(radiusKm)) km"),
-                        tint: AppTheme.coral
-                    )
-                    filterChip(
-                        title: localizedSort(sortBy),
-                        tint: AppTheme.mango
-                    )
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        filterChip(
+                            title: targetGender == "any" ? L10n.text("Любой гендер", "Any gender") : localizedGender(targetGender),
+                            tint: AppTheme.sky
+                        )
+                        filterChip(
+                            title: L10n.text("\(Int(minAge))-\(Int(maxAge)) лет", "\(Int(minAge))-\(Int(maxAge)) years"),
+                            tint: AppTheme.mint
+                        )
+                        filterChip(
+                            title: L10n.text("Радиус \(Int(radiusKm)) км", "Radius \(Int(radiusKm)) km"),
+                            tint: AppTheme.coral
+                        )
+                        filterChip(
+                            title: localizedSort(sortBy),
+                            tint: AppTheme.mango
+                        )
+                    }
                 }
             }
         }
@@ -273,7 +282,8 @@ struct VideoFeedView: View {
             Image(systemName: systemName)
                 .font(.system(size: 18, weight: .semibold))
                 .frame(width: 42, height: 42)
-                .background(Color.white.opacity(0.82))
+                .background(Color.white.opacity(0.74))
+                .background(.ultraThinMaterial, in: Circle())
                 .foregroundColor(AppTheme.ink)
                 .clipShape(Circle())
         }
@@ -316,6 +326,14 @@ struct VideoFeedView: View {
             sortBy: sortBy,
             radiusKm: radiusKm
         )
+    }
+
+    private func openRecorderIfAllowed() {
+        guard sessionManager.isActive else {
+            showSessionRequiredAlert = true
+            return
+        }
+        showRecorder = true
     }
 
     private func profileSummary(for video: VideoDTO) -> DatingProfile {
@@ -412,6 +430,9 @@ private struct VideoGridCard: View {
 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
+                        if video.viewer_can_match_author {
+                            videoTag(L10n.text("Открыт мэтч", "Match open"))
+                        }
                         Spacer()
                         SessionCountdownPill(
                             expiresAt: parseDate(video.session_expires_at),
@@ -489,6 +510,8 @@ private struct ReelVideoPlayer: View {
     @State private var showSuperLikeComposer: Bool = false
     @State private var superLikeMessage: String = ""
     @State private var selectedProfile: DatingProfile?
+    @State private var isFollowing: Bool = false
+    @State private var isUpdatingFollow: Bool = false
 
     var body: some View {
         ZStack {
@@ -550,6 +573,27 @@ private struct ReelVideoPlayer: View {
 
                 HStack(alignment: .bottom, spacing: 18) {
                     VStack(alignment: .leading, spacing: 14) {
+                        Button {
+                            Task { await toggleFollow() }
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image(systemName: isFollowing ? "bell.badge.fill" : "plus.circle.fill")
+                                    .font(.system(size: 16, weight: .bold))
+                                Text(isFollowing ? L10n.text("Уведомления включены", "Live alerts on") : L10n.text("Подписаться", "Follow"))
+                                    .font(.system(.subheadline, design: .rounded).weight(.bold))
+                            }
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 10)
+                            .background(
+                                Capsule()
+                                    .fill(isFollowing ? AppTheme.actionGradient : AppTheme.accentGradient)
+                            )
+                        }
+                        .buttonStyle(.plain)
+                        .opacity(isUpdatingFollow ? 0.68 : 1)
+                        .disabled(isUpdatingFollow)
+
                         if !video.caption.isEmpty {
                             Button {
                                 withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
@@ -606,6 +650,9 @@ private struct ReelVideoPlayer: View {
         .sheet(isPresented: $showComments) {
             VideoCommentsStandalone(video: video)
                 .environmentObject(authViewModel)
+        }
+        .onAppear {
+            isFollowing = video.viewer_follows_author
         }
         .sheet(item: $selectedProfile) { profile in
             ProfileInfoView(profile: profile)
@@ -731,6 +778,18 @@ private struct ReelVideoPlayer: View {
             distanceKm: video.distance_km,
             sessionExpiresAt: parseDate(dto.session_expires_at)
         )
+    }
+
+    private func toggleFollow() async {
+        isUpdatingFollow = true
+        let nextValue = !isFollowing
+        let result = await VideoService.shared.setFollowing(
+            userId: video.user_id,
+            isFollowing: nextValue,
+            token: authViewModel.token()
+        )
+        isFollowing = result
+        isUpdatingFollow = false
     }
 }
 

@@ -2,14 +2,15 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from typing import Optional
 
 from fastapi import APIRouter, Depends, Query
-from sqlalchemy import and_, or_, select
+from sqlalchemy import and_, func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..db import get_db
-from ..models import Block, Like, Ping, Profile, User, Video, VideoComment, VideoReaction
-from ..schemas import ActivityItemOut
+from ..models import Block, InboxState, Like, Match, MatchStatus, Ping, Profile, User, Video, VideoComment, VideoReaction
+from ..schemas import ActivityItemOut, InboxReadRequest, InboxSummaryOut
 from ..security import get_current_user_id
 from ..services.match_policy import find_match_between
 
@@ -20,6 +21,15 @@ router = APIRouter(prefix="/activity", tags=["activity"])
 class _EventEnvelope:
     item: ActivityItemOut
     created_at: datetime
+
+
+async def _ensure_inbox_state(db: AsyncSession, user_id: str) -> InboxState:
+    state = (await db.execute(select(InboxState).where(InboxState.user_id == user_id))).scalar_one_or_none()
+    if state is None:
+        state = InboxState(user_id=user_id)
+        db.add(state)
+        await db.flush()
+    return state
 
 
 @router.get("/feed", response_model=list[ActivityItemOut])
@@ -40,7 +50,7 @@ async def activity_feed(
         str(block.blocked_user_id) if str(block.blocker_id) == user_id else str(block.blocker_id)
         for block in blocked_rows
     }
-    match_cache: dict[str, str | None] = {}
+    match_cache: dict[str, Optional[str]] = {}
     events: list[_EventEnvelope] = []
 
     async def append_event(
@@ -49,8 +59,8 @@ async def activity_feed(
         actor_user: User,
         actor_profile: Profile,
         created_at: datetime,
-        message: str | None = None,
-        video_id: str | None = None,
+        message: Optional[str] = None,
+        video_id: Optional[str] = None,
     ) -> None:
         actor_id = str(actor_user.id)
         if actor_id in blocked_ids:
@@ -177,3 +187,127 @@ async def activity_feed(
 
     events.sort(key=lambda item: item.created_at, reverse=True)
     return [item.item for item in events[:limit]]
+
+
+@router.get("/summary", response_model=InboxSummaryOut)
+async def activity_summary(
+    db: AsyncSession = Depends(get_db),
+    user_id: str = Depends(get_current_user_id),
+):
+    now = datetime.now(timezone.utc)
+    state = await _ensure_inbox_state(db, user_id)
+
+    blocked_rows = (
+        await db.execute(
+            select(Block).where(
+                or_(Block.blocker_id == user_id, Block.blocked_user_id == user_id)
+            )
+        )
+    ).scalars().all()
+    blocked_ids = {
+        str(block.blocked_user_id) if str(block.blocker_id) == user_id else str(block.blocker_id)
+        for block in blocked_rows
+    }
+
+    activity_since = state.activity_seen_at
+    likes_since = state.likes_seen_at
+    matches_since = state.matches_seen_at
+
+    activity_count = 0
+
+    like_query = select(Like, User).join(User, User.id == Like.from_user_id).where(Like.to_user_id == user_id)
+    if activity_since is not None:
+        like_query = like_query.where(Like.created_at > activity_since)
+    like_rows = (await db.execute(like_query)).all()
+    activity_count += sum(1 for _, actor_user in like_rows if str(actor_user.id) not in blocked_ids)
+
+    ping_query = select(Ping, User).join(User, User.id == Ping.sender_id).where(Ping.target_user_id == user_id)
+    if activity_since is not None:
+        ping_query = ping_query.where(Ping.created_at > activity_since)
+    ping_rows = (await db.execute(ping_query)).all()
+    activity_count += sum(1 for _, actor_user in ping_rows if str(actor_user.id) not in blocked_ids)
+
+    comment_query = (
+        select(VideoComment, User)
+        .join(Video, Video.id == VideoComment.video_id)
+        .join(User, User.id == VideoComment.user_id)
+        .where(
+            Video.user_id == user_id,
+            VideoComment.user_id != user_id,
+            VideoComment.deleted_at.is_(None),
+        )
+    )
+    if activity_since is not None:
+        comment_query = comment_query.where(VideoComment.created_at > activity_since)
+    comment_rows = (await db.execute(comment_query)).all()
+    activity_count += sum(1 for _, actor_user in comment_rows if str(actor_user.id) not in blocked_ids)
+
+    reaction_query = (
+        select(VideoReaction, User)
+        .join(Video, Video.id == VideoReaction.video_id)
+        .join(User, User.id == VideoReaction.user_id)
+        .where(Video.user_id == user_id, VideoReaction.user_id != user_id)
+    )
+    if activity_since is not None:
+        reaction_query = reaction_query.where(VideoReaction.created_at > activity_since)
+    reaction_rows = (await db.execute(reaction_query)).all()
+    activity_count += sum(1 for _, actor_user in reaction_rows if str(actor_user.id) not in blocked_ids)
+
+    unread_likes_count = 0
+    like_list_query = (
+        select(Like, User, Profile)
+        .join(User, User.id == Like.from_user_id)
+        .join(Profile, Profile.user_id == Like.from_user_id)
+        .where(Like.to_user_id == user_id)
+        .order_by(Like.created_at.desc())
+    )
+    if likes_since is not None:
+        like_list_query = like_list_query.where(Like.created_at > likes_since)
+    like_list_rows = (await db.execute(like_list_query)).all()
+    for like, actor_user, _ in like_list_rows:
+        actor_id = str(actor_user.id)
+        if actor_id in blocked_ids:
+            continue
+        mutual = await db.execute(
+            select(Like).where(and_(Like.from_user_id == user_id, Like.to_user_id == actor_user.id))
+        )
+        if mutual.scalar_one_or_none():
+            continue
+        existing_match = await find_match_between(db, user_id, actor_user.id)
+        if existing_match and existing_match.status != MatchStatus.expired:
+            continue
+        unread_likes_count += 1
+
+    unread_matches_query = select(func.count(Match.id)).where(
+        or_(Match.user_a_id == user_id, Match.user_b_id == user_id),
+        Match.status != MatchStatus.expired,
+    )
+    if matches_since is not None:
+        unread_matches_query = unread_matches_query.where(Match.created_at > matches_since)
+    unread_matches_count = int((await db.execute(unread_matches_query)).scalar() or 0)
+
+    await db.commit()
+    return InboxSummaryOut(
+        unread_activity_count=activity_count,
+        unread_likes_count=unread_likes_count,
+        unread_matches_count=unread_matches_count,
+    )
+
+
+@router.post("/read")
+async def mark_activity_read(
+    payload: InboxReadRequest,
+    db: AsyncSession = Depends(get_db),
+    user_id: str = Depends(get_current_user_id),
+):
+    state = await _ensure_inbox_state(db, user_id)
+    now = datetime.now(timezone.utc)
+    if payload.scope == "activity":
+        state.activity_seen_at = now
+    elif payload.scope == "likes":
+        state.likes_seen_at = now
+    else:
+        state.matches_seen_at = now
+    db.add(state)
+    await db.commit()
+    return {"ok": True, "scope": payload.scope}

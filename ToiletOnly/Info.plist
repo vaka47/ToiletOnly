@@ -26,6 +26,8 @@
 	<string>Нужна камера для проверки унитаза и открытия сессии.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Местоположение нужно для поиска ближайших людей в туалете.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Микрофон нужен для записи живых видео в текущей сессии.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Нужен доступ к фото для заполнения профиля.</string>
 	<key>UILaunchScreen</key>

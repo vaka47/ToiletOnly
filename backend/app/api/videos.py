@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
+from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -8,8 +9,8 @@ from sqlalchemy import select, func, and_, or_
 from math import radians, sin, cos, sqrt, atan2
 
 from ..db import get_db
-from ..models import Video, VideoComment, VideoReaction, User, Profile, Block
-from ..schemas import VideoOut, VideoCommentCreate, VideoCommentOut, VideoReactionCreate
+from ..models import Video, VideoComment, VideoFollow, VideoReaction, User, Profile, Block
+from ..schemas import FollowStatusOut, VideoOut, VideoCommentCreate, VideoCommentOut, VideoReactionCreate
 from ..security import get_current_user_id
 
 router = APIRouter(prefix="/videos", tags=["videos"])
@@ -26,10 +27,10 @@ def _distance_km(a_lat: float, a_lon: float, b_lat: float, b_lon: float) -> floa
 
 
 def _viewer_can_match_author(
-    viewer_user: User | None,
-    viewer_profile: Profile | None,
+    viewer_user: Optional[User],
+    viewer_profile: Optional[Profile],
     author_user: User,
-    author_profile: Profile | None,
+    author_profile: Optional[Profile],
 ) -> bool:
     if viewer_user is None or viewer_profile is None or author_profile is None:
         return False
@@ -44,15 +45,22 @@ def _viewer_can_match_author(
     return viewer_accepts and author_accepts
 
 
+def _viewer_follows_author(
+    viewer_follows: set[str],
+    author_user: User,
+) -> bool:
+    return str(author_user.id) in viewer_follows
+
+
 @router.get("/feed", response_model=list[VideoOut])
 async def video_feed(
     db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_current_user_id),
-    target_gender: str | None = Query(default=None),
-    age_min: int | None = Query(default=None, ge=18, le=100),
-    age_max: int | None = Query(default=None, ge=18, le=100),
+    target_gender: Optional[str] = Query(default=None),
+    age_min: Optional[int] = Query(default=None, ge=18, le=100),
+    age_max: Optional[int] = Query(default=None, ge=18, le=100),
     sort_by: str = Query(default="popular", pattern="^(popular|distance|recent)$"),
-    radius_km: float | None = Query(default=None, ge=1, le=500),
+    radius_km: Optional[float] = Query(default=None, ge=1, le=500),
 ):
     now = datetime.now(timezone.utc)
     visible_after = now - timedelta(minutes=15)
@@ -92,6 +100,11 @@ async def video_feed(
     rows = (await db.execute(query)).all()
     if not rows:
         return []
+
+    follows_rows = await db.execute(
+        select(VideoFollow.target_user_id).where(VideoFollow.follower_id == user_id)
+    )
+    viewer_follows = {str(item) for item in follows_rows.scalars().all()}
 
     video_ids = [video.id for video, _, _ in rows]
     comments_rows = await db.execute(
@@ -143,6 +156,7 @@ async def video_feed(
                 comments_count=cc,
                 reactions_count=rc,
                 viewer_can_match_author=_viewer_can_match_author(my_user, my_profile, author, author_profile),
+                viewer_follows_author=_viewer_follows_author(viewer_follows, author),
                 distance_km=distance,
                 session_expires_at=author_profile.session_expires_at.isoformat() if author_profile and author_profile.session_expires_at else None,
                 created_at=video.created_at.isoformat(),
@@ -182,6 +196,10 @@ async def videos_by_user(
     video_ids = [video.id for video, _, _ in rows]
     if not video_ids:
         return []
+    follows_rows = await db.execute(
+        select(VideoFollow.target_user_id).where(VideoFollow.follower_id == user_id)
+    )
+    viewer_follows = {str(item) for item in follows_rows.scalars().all()}
     comments_rows = await db.execute(
         select(VideoComment.video_id, func.count(VideoComment.id))
         .where(VideoComment.video_id.in_(video_ids), VideoComment.deleted_at.is_(None))
@@ -210,12 +228,82 @@ async def videos_by_user(
                 comments_count=int(comments_count.get(video.id, 0)),
                 reactions_count=int(reactions_count.get(video.id, 0)),
                 viewer_can_match_author=_viewer_can_match_author(viewer_user, viewer_profile, author, author_profile),
+                viewer_follows_author=_viewer_follows_author(viewer_follows, author),
                 session_expires_at=author_profile.session_expires_at.isoformat() if author_profile and author_profile.session_expires_at else None,
                 created_at=video.created_at.isoformat(),
             )
         )
     items.sort(key=lambda item: item.created_at, reverse=True)
     return items
+
+
+@router.get("/follow/{target_user_id}", response_model=FollowStatusOut)
+async def follow_status(
+    target_user_id: str,
+    db: AsyncSession = Depends(get_db),
+    user_id: str = Depends(get_current_user_id),
+):
+    follow = (
+        await db.execute(
+            select(VideoFollow).where(
+                VideoFollow.follower_id == user_id,
+                VideoFollow.target_user_id == target_user_id,
+            )
+        )
+    ).scalar_one_or_none()
+    return FollowStatusOut(target_user_id=target_user_id, is_following=follow is not None)
+
+
+@router.post("/follow/{target_user_id}", response_model=FollowStatusOut)
+async def follow_user(
+    target_user_id: str,
+    db: AsyncSession = Depends(get_db),
+    user_id: str = Depends(get_current_user_id),
+):
+    if target_user_id == user_id:
+        raise HTTPException(status_code=400, detail="cannot_follow_self")
+    blocked = await db.execute(
+        select(Block).where(
+            or_(
+                and_(Block.blocker_id == user_id, Block.blocked_user_id == target_user_id),
+                and_(Block.blocker_id == target_user_id, Block.blocked_user_id == user_id),
+            )
+        )
+    )
+    if blocked.scalar_one_or_none():
+        raise HTTPException(status_code=403, detail="blocked")
+    existing = (
+        await db.execute(
+            select(VideoFollow).where(
+                VideoFollow.follower_id == user_id,
+                VideoFollow.target_user_id == target_user_id,
+            )
+        )
+    ).scalar_one_or_none()
+    if existing is None:
+        db.add(VideoFollow(follower_id=user_id, target_user_id=target_user_id))
+        await db.commit()
+    return FollowStatusOut(target_user_id=target_user_id, is_following=True)
+
+
+@router.delete("/follow/{target_user_id}", response_model=FollowStatusOut)
+async def unfollow_user(
+    target_user_id: str,
+    db: AsyncSession = Depends(get_db),
+    user_id: str = Depends(get_current_user_id),
+):
+    follow = (
+        await db.execute(
+            select(VideoFollow).where(
+                VideoFollow.follower_id == user_id,
+                VideoFollow.target_user_id == target_user_id,
+            )
+        )
+    ).scalar_one_or_none()
+    if follow is not None:
+        await db.delete(follow)
+        await db.commit()
+    return FollowStatusOut(target_user_id=target_user_id, is_following=False)
 
 
 @router.get("/{video_id}/comments", response_model=list[VideoCommentOut])

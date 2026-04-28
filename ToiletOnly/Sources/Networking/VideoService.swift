@@ -13,6 +13,7 @@ struct VideoDTO: Decodable, Identifiable {
     let comments_count: Int
     let reactions_count: Int
     let viewer_can_match_author: Bool
+    let viewer_follows_author: Bool
     let distance_km: Double?
     let session_expires_at: String?
     let created_at: String
@@ -36,6 +37,11 @@ struct VideoCommentCreateRequest: Encodable {
 
 struct VideoReactionRequest: Encodable {
     let emoji: String
+}
+
+struct FollowStatusDTO: Decodable {
+    let target_user_id: String
+    let is_following: Bool
 }
 
 final class VideoService {
@@ -144,6 +150,36 @@ final class VideoService {
             )
         } catch {
             print("Delete video failed: \(error)")
+        }
+    }
+
+    func followStatus(userId: String, token: String?) async -> Bool {
+        guard let token else { return false }
+        do {
+            let item: FollowStatusDTO = try await APIClient.shared.request(
+                "/videos/follow/\(userId)",
+                token: token
+            )
+            return item.is_following
+        } catch {
+            print("Follow status failed: \(error)")
+            return false
+        }
+    }
+
+    func setFollowing(userId: String, isFollowing: Bool, token: String?) async -> Bool {
+        guard let token else { return false }
+        do {
+            let method = isFollowing ? "POST" : "DELETE"
+            let item: FollowStatusDTO = try await APIClient.shared.request(
+                "/videos/follow/\(userId)",
+                method: method,
+                token: token
+            )
+            return item.is_following
+        } catch {
+            print("Follow update failed: \(error)")
+            return !isFollowing
         }
     }
 }

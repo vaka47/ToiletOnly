@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import text
@@ -103,6 +105,32 @@ async def on_startup():
         await conn.execute(
             text(
                 """
+                CREATE TABLE IF NOT EXISTS video_follows (
+                    follower_id UUID NOT NULL REFERENCES users(id),
+                    target_user_id UUID NOT NULL REFERENCES users(id),
+                    created_at TIMESTAMPTZ DEFAULT now(),
+                    PRIMARY KEY (follower_id, target_user_id)
+                )
+                """
+            )
+        )
+        await conn.execute(
+            text(
+                """
+                CREATE TABLE IF NOT EXISTS inbox_states (
+                    user_id UUID PRIMARY KEY REFERENCES users(id),
+                    activity_seen_at TIMESTAMPTZ NULL,
+                    likes_seen_at TIMESTAMPTZ NULL,
+                    matches_seen_at TIMESTAMPTZ NULL,
+                    created_at TIMESTAMPTZ DEFAULT now(),
+                    updated_at TIMESTAMPTZ DEFAULT now()
+                )
+                """
+            )
+        )
+        await conn.execute(
+            text(
+                """
                 CREATE TABLE IF NOT EXISTS match_participant_states (
                     match_id UUID NOT NULL REFERENCES matches(id),
                     user_id UUID NOT NULL REFERENCES users(id),
@@ -129,6 +157,7 @@ app.include_router(ping.router)
 app.include_router(videos.router)
 app.include_router(activity.router)
 
+os.makedirs(settings.media_storage_path, exist_ok=True)
 app.mount("/media", StaticFiles(directory=settings.media_storage_path), name="media")
 
 

@@ -7,9 +7,12 @@
 .codex_tmp/
 **/__pycache__/
 *.pyc
+uploads/
+backend/uploads/
 
 # Xcode user data and build outputs
 DerivedData/
+.derived_toiletonly/
 *.xcuserstate
 *.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/

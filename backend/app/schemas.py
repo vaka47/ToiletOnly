@@ -186,9 +186,25 @@ class VideoOut(BaseModel):
     comments_count: int
     reactions_count: int
     viewer_can_match_author: bool = False
+    viewer_follows_author: bool = False
     distance_km: Optional[float] = None
     session_expires_at: Optional[str] = None
     created_at: str
+
+
+class InboxSummaryOut(BaseModel):
+    unread_activity_count: int
+    unread_likes_count: int
+    unread_matches_count: int
+
+
+class InboxReadRequest(BaseModel):
+    scope: str = Field(pattern="^(activity|likes|matches)$")
+
+
+class FollowStatusOut(BaseModel):
+    target_user_id: str
+    is_following: bool
 
 
 class VideoCommentCreate(BaseModel):

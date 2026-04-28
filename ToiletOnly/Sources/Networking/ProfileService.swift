@@ -54,6 +54,11 @@ struct SessionStateResponse: Decodable {
     let consumed_matches: Int?
 }
 
+struct SessionVideoResponse: Decodable {
+    let ok: Bool
+    let video_id: String?
+}
+
 final class ProfileService {
     static let shared = ProfileService()
 
@@ -110,19 +115,16 @@ final class ProfileService {
         }
     }
 
-    func updateSessionVideo(token: String?, assetURL: String, caption: String) async {
-        guard let token else { return }
+    func updateSessionVideo(token: String?, assetURL: String, caption: String) async throws -> Bool {
+        guard let token else { return false }
         let payload = SessionVideoRequest(asset_url: assetURL, caption: caption)
-        do {
-            let _: [String: Bool] = try await APIClient.shared.request(
-                "/profiles/session-video",
-                method: "POST",
-                token: token,
-                body: payload
-            )
-        } catch {
-            print("Session video update failed: \(error)")
-        }
+        let response: SessionVideoResponse = try await APIClient.shared.request(
+            "/profiles/session-video",
+            method: "POST",
+            token: token,
+            body: payload
+        )
+        return response.ok
     }
 
     func updateSessionState(token: String?, active: Bool) async {

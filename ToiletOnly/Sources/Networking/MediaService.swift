@@ -10,7 +10,17 @@ final class MediaService {
     private init() {}
 
     func uploadVideo(token: String?, fileURL: URL, purpose: String = "session_video") async throws -> String {
-        try await uploadMedia(token: token, fileURL: fileURL, mimeType: "video/mp4", purpose: purpose)
+        let ext = fileURL.pathExtension.lowercased()
+        let mimeType: String
+        switch ext {
+        case "mov":
+            mimeType = "video/quicktime"
+        case "m4v":
+            mimeType = "video/x-m4v"
+        default:
+            mimeType = "video/mp4"
+        }
+        return try await uploadMedia(token: token, fileURL: fileURL, mimeType: mimeType, purpose: purpose)
     }
 
     func uploadImage(token: String?, fileURL: URL, purpose: String = "profile_photo") async throws -> String {

@@ -19,8 +19,12 @@ final class APIClient {
             request.httpBody = try JSONEncoder().encode(AnyEncodable(body))
         }
         let (data, response) = try await URLSession.shared.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode < 300 else {
+        guard let httpResponse = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
+        }
+        guard httpResponse.statusCode < 300 else {
+            let detail = (try? JSONDecoder().decode(APIErrorPayload.self, from: data))?.detail
+            throw APIClientError(statusCode: httpResponse.statusCode, detail: detail)
         }
         return try JSONDecoder().decode(T.self, from: data)
     }
@@ -35,5 +39,21 @@ private struct AnyEncodable: Encodable {
 
     func encode(to encoder: Encoder) throws {
         try encodeBlock(encoder)
+    }
+}
+
+private struct APIErrorPayload: Decodable {
+    let detail: String?
+}
+
+struct APIClientError: LocalizedError {
+    let statusCode: Int
+    let detail: String?
+
+    var errorDescription: String? {
+        guard let detail, !detail.isEmpty else {
+            return "HTTP \(statusCode)"
+        }
+        return detail
     }
 }

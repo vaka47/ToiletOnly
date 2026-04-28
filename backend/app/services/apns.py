@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import time
+from typing import Any, Optional
 import httpx
 from jose import jwt
 from ..config import settings
@@ -13,7 +14,7 @@ def _load_private_key() -> str:
     return key.replace("\\n", "\n")
 
 
-def build_apns_jwt() -> str | None:
+def build_apns_jwt() -> Optional[str]:
     if not settings.apns_key_id or not settings.apns_team_id:
         return None
     private_key = _load_private_key()
@@ -29,7 +30,7 @@ def apns_host() -> str:
     return "https://api.sandbox.push.apple.com" if settings.apns_use_sandbox else "https://api.push.apple.com"
 
 
-def build_payload(title: str, body: str, data: dict | None = None) -> dict:
+def build_payload(title: str, body: str, data: Optional[dict[str, Any]] = None) -> dict[str, Any]:
     payload = {
         "aps": {
             "alert": {"title": title, "body": body},
@@ -42,7 +43,7 @@ def build_payload(title: str, body: str, data: dict | None = None) -> dict:
     return payload
 
 
-async def send_push(device_token: str, title: str, body: str, data: dict | None = None) -> bool:
+async def send_push(device_token: str, title: str, body: str, data: Optional[dict[str, Any]] = None) -> bool:
     jwt_token = build_apns_jwt()
     if not jwt_token:
         return False

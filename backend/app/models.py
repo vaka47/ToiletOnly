@@ -124,6 +124,14 @@ class Video(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
 
+class VideoFollow(Base):
+    __tablename__ = "video_follows"
+
+    follower_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), primary_key=True)
+    target_user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), primary_key=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
 class VideoComment(Base):
     __tablename__ = "video_comments"
 
@@ -173,6 +181,17 @@ class DeviceToken(Base):
     token = Column(String, nullable=False, unique=True)
     platform = Column(String, nullable=False, default="ios")
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class InboxState(Base):
+    __tablename__ = "inbox_states"
+
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), primary_key=True)
+    activity_seen_at = Column(DateTime(timezone=True), nullable=True)
+    likes_seen_at = Column(DateTime(timezone=True), nullable=True)
+    matches_seen_at = Column(DateTime(timezone=True), nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
 
 class Ping(Base):

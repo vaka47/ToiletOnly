@@ -17,17 +17,9 @@ struct LiveDatingView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 18) {
-                if let profile = viewModel.currentProfile {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text(L10n.text("Анкеты рядом", "Profiles nearby"))
-                            .font(.system(size: 28, weight: .bold, design: .rounded))
-                            .foregroundColor(AppTheme.ink)
-                        Text(L10n.text("Свайпни влево, чтобы пропустить. Вправо, чтобы лайкнуть. Вверх, чтобы раскрыть профиль.", "Swipe left to skip, right to like, up to expand profile."))
-                            .font(.callout)
-                            .foregroundColor(AppTheme.muted)
-                    }
-                    .padding(.horizontal, 16)
+                heroHeader
 
+                if let profile = viewModel.currentProfile {
                     ProfileCardView(
                         profile: profile,
                         remainingSuperLikes: viewModel.remainingSuperLikesToday,
@@ -119,11 +111,47 @@ struct LiveDatingView: View {
         }
     }
 
+    private var heroHeader: some View {
+        AppCard {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(L10n.text("Анкеты рядом", "Profiles nearby"))
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .foregroundColor(AppTheme.ink)
+                        Text(L10n.text("Свайпни влево, чтобы пропустить. Вправо, чтобы лайкнуть. Вверх, чтобы раскрыть профиль.", "Swipe left to skip, right to like, up to expand profile."))
+                            .font(.callout)
+                            .foregroundColor(AppTheme.muted)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    Spacer(minLength: 12)
+                    VStack(alignment: .trailing, spacing: 8) {
+                        heroMetric(value: "\(viewModel.filteredProfiles.count)", title: L10n.text("в ленте", "in feed"), tint: AppTheme.sky)
+                        heroMetric(value: "\(viewModel.remainingSuperLikesToday)", title: L10n.text("суперлайков", "superlikes"), tint: AppTheme.mango)
+                    }
+                }
+
+                HStack(spacing: 10) {
+                    heroChip(L10n.text("Свайп до мэтча", "Swipe to match"), tint: AppTheme.coral)
+                    heroChip(L10n.text("Сначала онлайн", "Live now first"), tint: AppTheme.mint)
+                    heroChip(L10n.text("Только в сессии", "Session-only"), tint: AppTheme.sky)
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+    }
+
     private var quickMatchStrip: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(L10n.text("Активные диалоги", "Active chats"))
-                .font(.system(.headline, design: .rounded))
-                .foregroundColor(AppTheme.ink)
+            HStack {
+                Text(L10n.text("Активные диалоги", "Active chats"))
+                    .font(.system(.headline, design: .rounded))
+                    .foregroundColor(AppTheme.ink)
+                Spacer()
+                Text(L10n.text("Последние мэтчи сверху", "Latest matches first"))
+                    .font(.caption.weight(.semibold))
+                    .foregroundColor(AppTheme.muted)
+            }
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     ForEach(viewModel.activeMatches.prefix(10)) { match in
@@ -142,8 +170,9 @@ struct LiveDatingView: View {
                             .frame(width: 182, alignment: .leading)
                             .background(
                                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                    .fill(Color.white.opacity(0.72))
-                                    .shadow(color: AppTheme.shadow, radius: 12, x: 0, y: 8)
+                                    .fill(Color.white.opacity(0.68))
+                                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                                    .shadow(color: AppTheme.shadow.opacity(0.9), radius: 14, x: 0, y: 10)
                             )
                         }
                         .buttonStyle(.plain)
@@ -284,5 +313,30 @@ struct LiveDatingView: View {
         case .expired:
             return L10n.text("Сгорел", "Expired")
         }
+    }
+
+    private func heroChip(_ title: String, tint: Color) -> some View {
+        Text(title)
+            .font(.system(.caption, design: .rounded).weight(.bold))
+            .foregroundColor(tint)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 9)
+            .background(tint.opacity(0.12))
+            .clipShape(Capsule())
+    }
+
+    private func heroMetric(value: String, title: String, tint: Color) -> some View {
+        VStack(alignment: .trailing, spacing: 2) {
+            Text(value)
+                .font(.system(size: 18, weight: .bold, design: .rounded))
+                .foregroundColor(tint)
+            Text(title)
+                .font(.caption2.weight(.semibold))
+                .foregroundColor(AppTheme.muted)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .background(tint.opacity(0.10))
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 }

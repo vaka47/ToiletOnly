@@ -3,6 +3,7 @@ import AVKit
 
 struct ProfileView: View {
     @EnvironmentObject private var authViewModel: AuthViewModel
+    @EnvironmentObject private var sessionManager: SessionManager
     @State private var showVideoSheet: Bool = false
     @State private var showSetupSheet: Bool = false
     @StateObject private var recorder = VideoRecorder()
@@ -11,6 +12,7 @@ struct ProfileView: View {
     @State private var selectedTab: String = "bio"
     @State private var showDeleteAccountAlert: Bool = false
     @State private var showBlockedUsersSheet: Bool = false
+    @State private var showSessionRequiredAlert: Bool = false
 
     var body: some View {
         ScrollView {
@@ -57,6 +59,11 @@ struct ProfileView: View {
             }
             Button(L10n.text("Отмена", "Cancel"), role: .cancel) {}
         }
+        .alert(L10n.text("Нужна активная сессия", "Active session required"), isPresented: $showSessionRequiredAlert) {
+            Button(L10n.text("Ок", "OK"), role: .cancel) {}
+        } message: {
+            Text(L10n.text("Новое видео можно записать только из текущей 15-минутной сессии.", "A new video can only be recorded during the current 15-minute session."))
+        }
         .task {
             await reloadAll()
             if profile == nil {
@@ -66,36 +73,22 @@ struct ProfileView: View {
     }
 
     private var header: some View {
-        HStack(alignment: .top) {
+        HStack(alignment: .top, spacing: 12) {
             VStack(alignment: .leading, spacing: 6) {
                 Text(L10n.text("Профиль", "Profile"))
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .foregroundColor(AppTheme.ink)
-                Text(L10n.text("Фото, био и архив видео.", "Photos, bio, and video archive."))
+                Text(L10n.text("Твои фото, bio и архив коротких видео.", "Your photos, bio, and short-video archive."))
                     .font(.callout)
                     .foregroundColor(AppTheme.muted)
             }
             Spacer()
-            Button {
+            profileIconButton("hand.raised.slash.fill") {
                 showBlockedUsersSheet = true
-            } label: {
-                Image(systemName: "hand.raised.slash.fill")
-                    .font(.headline)
-                    .frame(width: 42, height: 42)
-                    .background(Color.white.opacity(0.80))
-                    .clipShape(Circle())
             }
-            .buttonStyle(.plain)
-            Button {
+            profileIconButton("square.and.pencil") {
                 showSetupSheet = true
-            } label: {
-                Image(systemName: "square.and.pencil")
-                    .font(.headline)
-                    .frame(width: 42, height: 42)
-                    .background(Color.white.opacity(0.80))
-                    .clipShape(Circle())
             }
-            .buttonStyle(.plain)
             Menu {
                 Button(L10n.text("Редактировать", "Edit")) { showSetupSheet = true }
                 Button(L10n.text("Блок-лист", "Blocked users")) { showBlockedUsersSheet = true }
@@ -107,7 +100,7 @@ struct ProfileView: View {
                 Image(systemName: "gearshape.fill")
                     .font(.headline)
                     .frame(width: 42, height: 42)
-                    .background(Color.white.opacity(0.80))
+                    .background(AppTheme.panelStrong)
                     .clipShape(Circle())
             }
             .buttonStyle(.plain)
@@ -116,9 +109,13 @@ struct ProfileView: View {
     }
 
     private var actionRow: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 12) {
             Button(L10n.text("Записать видео", "Record video")) {
-                showVideoSheet = true
+                if sessionManager.isActive {
+                    showVideoSheet = true
+                } else {
+                    showSessionRequiredAlert = true
+                }
             }
             .buttonStyle(PrimaryButtonStyle(tint: AppTheme.mint))
 
@@ -131,27 +128,60 @@ struct ProfileView: View {
     }
 
     private var summaryCard: some View {
-        AppCard {
+        ZStack(alignment: .bottomLeading) {
+            if let profile,
+               let url = URL(string: profile.toilet_selfie_url),
+               url.scheme?.hasPrefix("http") == true {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image.resizable().scaledToFill()
+                    } else {
+                        summaryPlaceholder
+                    }
+                }
+            } else {
+                summaryPlaceholder
+            }
+
+            LinearGradient(
+                colors: [Color.black.opacity(0.02), Color.black.opacity(0.72)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+
             VStack(alignment: .leading, spacing: 12) {
                 if let profile {
-                    Text(profile.hide_age ? profile.display_name : "\(profile.display_name), \(profile.age)")
-                        .font(.system(.title2, design: .rounded).weight(.bold))
                     HStack(spacing: 8) {
-                        AccentTag(title: localizedGender(profile.gender), tint: AppTheme.sky)
+                        profileHeroTag(localizedGender(profile.gender), tint: AppTheme.sky)
                         ForEach(profile.looking_for_genders, id: \.self) { item in
-                            AccentTag(title: L10n.text("Ищу: \(localizedGender(item))", "Looking for: \(localizedGender(item))"), tint: AppTheme.mint)
+                            profileHeroTag(L10n.text("Ищу \(localizedGender(item))", "Looking for \(localizedGender(item))"), tint: AppTheme.mint)
                         }
                     }
+                    Text(profile.hide_age ? profile.display_name : "\(profile.display_name), \(profile.age)")
+                        .font(.system(size: 32, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
                     if !profile.bio_text.isEmpty {
                         Text(profile.bio_text)
-                            .foregroundColor(AppTheme.muted)
+                            .font(.system(size: 15, weight: .medium, design: .rounded))
+                            .foregroundColor(.white.opacity(0.88))
+                            .lineLimit(3)
+                    }
+
+                    HStack(spacing: 12) {
+                        metricPill(title: L10n.text("Фото", "Photos"), value: "\(profile.photos.count + 1)")
+                        metricPill(title: L10n.text("Видео", "Videos"), value: "\(myVideos.count)")
+                        metricPill(title: L10n.text("Имя", "Name"), value: profile.display_name.count > 0 ? "1" : "0")
                     }
                 } else {
                     Text(L10n.text("Профиль пока пустой.", "Profile is empty."))
-                        .foregroundColor(AppTheme.muted)
+                        .foregroundColor(.white)
                 }
             }
+            .padding(20)
         }
+        .frame(height: 320)
+        .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+        .shadow(color: AppTheme.shadow.opacity(0.95), radius: 20, x: 0, y: 14)
         .padding(.horizontal, 16)
     }
 
@@ -254,6 +284,50 @@ struct ProfileView: View {
         guard let token = authViewModel.token(), let userId = authViewModel.userId() else { return }
         profile = await ProfileService.shared.fetchProfile(userId: userId, token: token)
         myVideos = await VideoService.shared.byUser(userId: userId, token: token)
+    }
+
+    private func profileIconButton(_ icon: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: icon)
+                .font(.headline)
+                .frame(width: 42, height: 42)
+                .background(AppTheme.panelStrong)
+                .clipShape(Circle())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func profileHeroTag(_ title: String, tint: Color) -> some View {
+        Text(title)
+            .font(.system(.caption, design: .rounded).weight(.bold))
+            .foregroundColor(.white)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(tint.opacity(0.64))
+            .clipShape(Capsule())
+    }
+
+    private func metricPill(title: String, value: String) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(title)
+                .font(.caption2.weight(.semibold))
+                .foregroundColor(.white.opacity(0.72))
+            Text(value)
+                .font(.system(.subheadline, design: .rounded).weight(.bold))
+                .foregroundColor(.white)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .background(Color.white.opacity(0.14))
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+    }
+
+    private var summaryPlaceholder: some View {
+        LinearGradient(
+            colors: [AppTheme.sky.opacity(0.46), AppTheme.coral.opacity(0.36), AppTheme.mango.opacity(0.42)],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
     }
 
     private func localizedGender(_ raw: String) -> String {

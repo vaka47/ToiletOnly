@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Iterable
+from typing import Iterable, Optional, Union
 from uuid import UUID
 
 from sqlalchemy import select, and_, or_
@@ -88,7 +88,7 @@ async def consume_sessions_on_start(db: AsyncSession, user_id: UUID) -> int:
     return touched
 
 
-async def find_match_between(db: AsyncSession, user_a: UUID, user_b: UUID) -> Match | None:
+async def find_match_between(db: AsyncSession, user_a: UUID, user_b: UUID) -> Optional[Match]:
     rows = await db.execute(
         select(Match)
         .where(
@@ -102,7 +102,7 @@ async def find_match_between(db: AsyncSession, user_a: UUID, user_b: UUID) -> Ma
     return rows.scalars().first()
 
 
-def build_match_out(match: Match, states: Iterable[MatchParticipantState], viewer_id: UUID | str) -> dict:
+def build_match_out(match: Match, states: Iterable[MatchParticipantState], viewer_id: Union[UUID, str]) -> dict:
     viewer_str = str(viewer_id)
     state_list = list(states)
     my_state = next((item for item in state_list if str(item.user_id) == viewer_str), None)

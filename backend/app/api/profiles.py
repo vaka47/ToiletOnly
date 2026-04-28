@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import random
 from datetime import datetime, timedelta, timezone
+from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -12,6 +13,7 @@ from ..models import (
     Block,
     User,
     Video,
+    VideoFollow,
     VideoComment,
     VideoReaction,
     Like,
@@ -31,6 +33,7 @@ from ..schemas import (
     SessionStateRequest,
 )
 from ..security import get_current_user_id
+from ..services.apns import send_push
 from ..services.match_policy import consume_sessions_on_start
 from math import radians, sin, cos, sqrt, atan2
 
@@ -169,19 +172,37 @@ async def update_session_video(
     db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_current_user_id),
 ):
+    now = datetime.now(timezone.utc)
     result = await db.execute(select(Profile).where(Profile.user_id == user_id))
     profile = result.scalar_one_or_none()
     if profile is None:
         raise HTTPException(status_code=404, detail="profile not found")
+    if not profile.is_online_toilet or not profile.session_expires_at or profile.session_expires_at <= now:
+        raise HTTPException(status_code=400, detail="inactive_session")
     profile.session_video_url = payload.asset_url
     video = Video(
         user_id=profile.user_id,
         asset_url=payload.asset_url,
         caption=payload.caption.strip(),
-        comments_locked=(not profile.is_online_toilet),
+        comments_locked=False,
     )
     db.add(video)
+    author = (await db.execute(select(User).where(User.id == user_id))).scalar_one()
     await db.commit()
+    follower_rows = (
+        await db.execute(
+            select(DeviceToken)
+            .join(VideoFollow, VideoFollow.follower_id == DeviceToken.user_id)
+            .where(VideoFollow.target_user_id == user_id)
+        )
+    ).scalars().all()
+    for token in follower_rows:
+        await send_push(
+            device_token=token.token,
+            title=f"{author.display_name} сейчас в туалете",
+            body=payload.caption.strip() or "У этого профиля появилось новое видео в текущей сессии.",
+            data={"type": "followed_user_live", "user_id": str(user_id), "video_id": str(video.id)},
+        )
     return {"ok": True, "video_id": str(video.id)}
 
 
@@ -234,11 +255,11 @@ def _distance_km(a_lat: float, a_lon: float, b_lat: float, b_lon: float) -> floa
 async def get_feed(
     db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_current_user_id),
-    age_min: int | None = Query(default=None, ge=18, le=100),
-    age_max: int | None = Query(default=None, ge=18, le=100),
+    age_min: Optional[int] = Query(default=None, ge=18, le=100),
+    age_max: Optional[int] = Query(default=None, ge=18, le=100),
     show_nearby: bool = Query(default=False),
-    target_gender: str | None = Query(default=None),
-    radius_km: float | None = Query(default=None, ge=1, le=500),
+    target_gender: Optional[str] = Query(default=None),
+    radius_km: Optional[float] = Query(default=None, ge=1, le=500),
 ):
     now = datetime.now(timezone.utc)
     result_me = await db.execute(select(Profile).where(Profile.user_id == user_id))

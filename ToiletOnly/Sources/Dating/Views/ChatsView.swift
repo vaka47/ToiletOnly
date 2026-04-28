@@ -12,6 +12,8 @@ struct ChatsView: View {
     @State private var incomingLikes: [IncomingLikeDTO] = []
     @State private var selectedMatch: DatingMatch?
     @State private var selectedLike: IncomingLikeDTO?
+    @State private var unreadMatchesCount: Int = 0
+    @State private var unreadLikesCount: Int = 0
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -28,7 +30,10 @@ struct ChatsView: View {
             .padding(.bottom, 110)
         }
         .sheet(item: $selectedMatch, onDismiss: {
-            Task { await reload() }
+            Task {
+                await reload()
+                await refreshUnreadSummary()
+            }
         }) { match in
             ChatView(match: match) {
                 Task {
@@ -54,6 +59,7 @@ struct ChatsView: View {
                         _ = await LikeService.shared.send(to: like.from_user_id, action: "pass", token: authViewModel.token())
                         incomingLikes.removeAll { $0.id == like.id }
                         selectedLike = nil
+                        await refreshUnreadSummary()
                     }
                 },
                 onLike: {
@@ -64,6 +70,7 @@ struct ChatsView: View {
                         if let match {
                             selectedMatch = DatingMatch.fromBackend(match, profile: mapProfile(like), createdAt: Date())
                         }
+                        await refreshUnreadSummary()
                     }
                 }
             )
@@ -71,18 +78,40 @@ struct ChatsView: View {
         }
         .task {
             await reload()
+            await markCurrentTabRead()
+            await refreshUnreadSummary()
+        }
+        .onChange(of: tab) { _ in
+            Task {
+                await markCurrentTabRead()
+                await refreshUnreadSummary()
+            }
         }
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text(L10n.text("Диалоги", "Chats"))
-                .font(.system(size: 30, weight: .bold, design: .rounded))
-                .foregroundColor(AppTheme.ink)
+        AppCard {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(L10n.text("Диалоги", "Chats"))
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .foregroundColor(AppTheme.ink)
+                        Text(L10n.text("Мэтчи, входящие лайки и чаты с таймером в одном месте.", "Matches, incoming likes, and expiring chats in one place."))
+                            .font(.callout)
+                            .foregroundColor(AppTheme.muted)
+                    }
+                    Spacer(minLength: 12)
+                    VStack(alignment: .trailing, spacing: 8) {
+                        headerMetric(value: "\(matches.count)", title: L10n.text("чатов", "chats"), tint: AppTheme.sky)
+                        headerMetric(value: "\(incomingLikes.count)", title: L10n.text("лайков", "likes"), tint: AppTheme.coral)
+                    }
+                }
 
-            HStack(spacing: 10) {
-                tabButton(.matches, icon: "bubble.left.and.bubble.right.fill", title: L10n.text("Мэтчи", "Matches"), count: matches.count)
-                tabButton(.likedYou, icon: "heart.fill", title: L10n.text("Вас лайкнули", "Liked you"), count: incomingLikes.count)
+                HStack(spacing: 10) {
+                    tabButton(.matches, icon: "bubble.left.and.bubble.right.fill", title: L10n.text("Мэтчи", "Matches"), count: unreadMatchesCount)
+                    tabButton(.likedYou, icon: "heart.fill", title: L10n.text("Вас лайкнули", "Liked you"), count: unreadLikesCount)
+                }
             }
         }
         .padding(.horizontal, 16)
@@ -253,8 +282,9 @@ struct ChatsView: View {
             .padding(.vertical, 14)
             .background(
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(tab == item ? Color.white.opacity(0.84) : Color.white.opacity(0.54))
-                    .shadow(color: AppTheme.shadow, radius: 12, x: 0, y: 8)
+                    .fill(tab == item ? Color.white.opacity(0.80) : Color.white.opacity(0.58))
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .shadow(color: AppTheme.shadow.opacity(0.9), radius: 14, x: 0, y: 10)
             )
             .foregroundColor(AppTheme.ink)
         }
@@ -286,6 +316,17 @@ struct ChatsView: View {
         async let likeTask = LikeService.shared.incoming(token: authViewModel.token())
         matches = await matchTask
         incomingLikes = await likeTask
+    }
+
+    private func refreshUnreadSummary() async {
+        let summary = await ActivityService.shared.summary(token: authViewModel.token())
+        unreadMatchesCount = summary.unread_matches_count
+        unreadLikesCount = summary.unread_likes_count
+    }
+
+    private func markCurrentTabRead() async {
+        let scope = tab == .matches ? "matches" : "likes"
+        await ActivityService.shared.markRead(scope: scope, token: authViewModel.token())
     }
 
     private func shortStatus(_ item: MatchListItemDTO) -> String {
@@ -357,6 +398,21 @@ struct ChatsView: View {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         return formatter.date(from: raw) ?? ISO8601DateFormatter().date(from: raw)
+    }
+
+    private func headerMetric(value: String, title: String, tint: Color) -> some View {
+        VStack(alignment: .trailing, spacing: 2) {
+            Text(value)
+                .font(.system(size: 18, weight: .bold, design: .rounded))
+                .foregroundColor(tint)
+            Text(title)
+                .font(.caption2.weight(.semibold))
+                .foregroundColor(AppTheme.muted)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .background(tint.opacity(0.10))
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }
 }
 

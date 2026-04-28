@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy import and_, delete, or_, select
 from ..db import get_db
-from ..models import Block
+from ..models import Block, VideoFollow
 from ..schemas import BlockRequest, BlockOut
 from ..security import get_current_user_id
 
@@ -17,6 +17,14 @@ async def block_user(
 ):
     block = Block(blocker_id=user_id, blocked_user_id=payload.blocked_user_id)
     db.add(block)
+    await db.execute(
+        delete(VideoFollow).where(
+            or_(
+                and_(VideoFollow.follower_id == user_id, VideoFollow.target_user_id == payload.blocked_user_id),
+                and_(VideoFollow.follower_id == payload.blocked_user_id, VideoFollow.target_user_id == user_id),
+            )
+        )
+    )
     await db.commit()
     return BlockOut(blocker_id=str(user_id), blocked_user_id=payload.blocked_user_id)
 

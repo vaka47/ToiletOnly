@@ -21,6 +21,7 @@ struct MainAppView: View {
     @State private var chatBadgeCount: Int = 0
     @State private var showActivitySheet: Bool = false
     @State private var showVideoRecorder: Bool = false
+    @State private var showSessionRequiredAlert: Bool = false
 
     var body: some View {
         ZStack {
@@ -37,9 +38,13 @@ struct MainAppView: View {
                 onOpenActivity: {
                     showActivitySheet = true
                     activityBadgeCount = 0
+                    Task {
+                        await ActivityService.shared.markRead(scope: "activity", token: authViewModel.token())
+                        await refreshBadges()
+                    }
                 },
                 onOpenRecorder: {
-                    showVideoRecorder = true
+                    openRecorderIfAllowed()
                 }
             )
             .padding(.horizontal, 16)
@@ -65,6 +70,11 @@ struct MainAppView: View {
             Task { await refreshBadges() }
         }) {
             VideoRecorderView(recorder: recorder, token: authViewModel.token())
+        }
+        .alert(L10n.text("Нужна активная сессия", "Active session required"), isPresented: $showSessionRequiredAlert) {
+            Button(L10n.text("Ок", "OK"), role: .cancel) {}
+        } message: {
+            Text(L10n.text("Запись видео доступна только пока сессия открыта через унитаз и таймер еще не истек.", "Video recording is only available while the toilet-unlocked session is active and its timer has not expired."))
         }
         .overlay(alignment: .center) {
             if !authViewModel.isAuthenticated {
@@ -126,6 +136,14 @@ struct MainAppView: View {
         }
     }
 
+    private func openRecorderIfAllowed() {
+        guard sessionManager.isActive else {
+            showSessionRequiredAlert = true
+            return
+        }
+        showVideoRecorder = true
+    }
+
     private func sendLocationIfNeeded() {
         guard !didSendLocationForSession else { return }
         guard authViewModel.isAuthenticated else { return }
@@ -143,16 +161,11 @@ struct MainAppView: View {
     }
 
     private func refreshBadges() async {
-        async let activityItems = ActivityService.shared.feed(token: authViewModel.token(), limit: 30)
-        async let incomingLikes = LikeService.shared.incoming(token: authViewModel.token())
-        async let matches = MatchService.shared.list(token: authViewModel.token())
-        let activity = await activityItems
-        let likes = await incomingLikes
-        let matchItems = await matches
+        let summary = await ActivityService.shared.summary(token: authViewModel.token())
+        activityBadgeCount = summary.unread_activity_count
         if selectedTab != .chats {
-            chatBadgeCount = likes.count + matchItems.filter { !$0.my_is_kept || !$0.other_is_kept }.count
+            chatBadgeCount = summary.unread_likes_count + summary.unread_matches_count
         }
-        activityBadgeCount = activity.count
     }
 }
 
@@ -165,14 +178,19 @@ private struct TopChromeBar: View {
     var body: some View {
         HStack(spacing: 12) {
             HStack(spacing: 10) {
-                Image(systemName: "sparkles.rectangle.stack.fill")
-                    .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(AppTheme.coral)
+                ZStack {
+                    Circle()
+                        .fill(AppTheme.accentGradient)
+                        .frame(width: 38, height: 38)
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.white)
+                }
                 VStack(alignment: .leading, spacing: 2) {
                     Text(L10n.text("Toilet Dating", "Toilet Dating"))
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundColor(AppTheme.ink)
-                    Text(L10n.text("Live session social", "Live session social"))
+                    Text(L10n.text("Private beta social", "Private beta social"))
                         .font(.caption2)
                         .foregroundColor(AppTheme.muted)
                 }
@@ -194,8 +212,9 @@ private struct TopChromeBar: View {
         .padding(.vertical, 12)
         .background(
             RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(Color.white.opacity(0.84))
-                .shadow(color: AppTheme.shadow, radius: 16, x: 0, y: 10)
+                .fill(Color.white.opacity(0.74))
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+                .shadow(color: AppTheme.shadow.opacity(0.95), radius: 20, x: 0, y: 12)
         )
     }
 }
@@ -214,8 +233,9 @@ private struct BottomNavigationBar: View {
         .padding(8)
         .background(
             RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .fill(Color.white.opacity(0.88))
-                .shadow(color: AppTheme.shadow, radius: 18, x: 0, y: 10)
+                .fill(Color.white.opacity(0.76))
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
+                .shadow(color: AppTheme.shadow.opacity(0.95), radius: 22, x: 0, y: 12)
         )
     }
 
@@ -235,7 +255,7 @@ private struct BottomNavigationBar: View {
                 .padding(.vertical, 10)
                 .background(
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(selectedTab == tab ? AppTheme.accentGradient : LinearGradient(colors: [.clear], startPoint: .top, endPoint: .bottom))
+                        .fill(selectedTab == tab ? AppTheme.accentGradient : LinearGradient(colors: [Color.white.opacity(0.01)], startPoint: .top, endPoint: .bottom))
                 )
                 .foregroundColor(selectedTab == tab ? .white : AppTheme.ink)
 
@@ -285,7 +305,8 @@ private struct TopIconButton: View {
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(AppTheme.ink)
                     .frame(width: 42, height: 42)
-                    .background(Color.white.opacity(0.86))
+                    .background(Color.white.opacity(0.74))
+                    .background(.ultraThinMaterial, in: Circle())
                     .clipShape(Circle())
                 if badge > 0 {
                     Text("\(min(99, badge))")
