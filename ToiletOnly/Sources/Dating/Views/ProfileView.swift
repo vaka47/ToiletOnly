@@ -13,6 +13,7 @@ struct ProfileView: View {
     @State private var showDeleteAccountAlert: Bool = false
     @State private var showBlockedUsersSheet: Bool = false
     @State private var showSessionRequiredAlert: Bool = false
+    @State private var showOpsSheet: Bool = false
 
     var body: some View {
         ScrollView {
@@ -50,6 +51,10 @@ struct ProfileView: View {
                 Task { await reloadAll() }
             }
         }
+        .sheet(isPresented: $showOpsSheet) {
+            OpsDashboardView()
+                .environmentObject(authViewModel)
+        }
         .alert(L10n.text("Удалить профиль?", "Delete profile?"), isPresented: $showDeleteAccountAlert) {
             Button(L10n.text("Удалить", "Delete"), role: .destructive) {
                 Task {
@@ -83,6 +88,11 @@ struct ProfileView: View {
                     .foregroundColor(AppTheme.muted)
             }
             Spacer()
+            if AppConfig.isLocalDemo {
+                profileIconButton("chart.xyaxis.line") {
+                    showOpsSheet = true
+                }
+            }
             profileIconButton("hand.raised.slash.fill") {
                 showBlockedUsersSheet = true
             }
@@ -90,6 +100,9 @@ struct ProfileView: View {
                 showSetupSheet = true
             }
             Menu {
+                if AppConfig.isLocalDemo {
+                    Button(L10n.text("Demo HQ", "Demo HQ")) { showOpsSheet = true }
+                }
                 Button(L10n.text("Редактировать", "Edit")) { showSetupSheet = true }
                 Button(L10n.text("Блок-лист", "Blocked users")) { showBlockedUsersSheet = true }
                 Button(L10n.text("Выйти", "Sign out"), role: .destructive) { authViewModel.signOut() }

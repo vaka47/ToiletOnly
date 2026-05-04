@@ -12,6 +12,7 @@ from ..db import get_db
 from ..models import Video, VideoComment, VideoFollow, VideoReaction, User, Profile, Block
 from ..schemas import FollowStatusOut, VideoOut, VideoCommentCreate, VideoCommentOut, VideoReactionCreate
 from ..security import get_current_user_id
+from ..services.analytics import track_event
 
 router = APIRouter(prefix="/videos", tags=["videos"])
 
@@ -373,6 +374,14 @@ async def post_comment(
         text=payload.text,
     )
     db.add(comment)
+    await track_event(
+        db,
+        event_name="video_commented",
+        user_id=user_id,
+        target_user_id=str(video.user_id),
+        source="server",
+        properties={"video_id": str(video.id), "is_reply": payload.parent_comment_id is not None},
+    )
     await db.commit()
     await db.refresh(comment)
 
@@ -430,6 +439,14 @@ async def react_video(
 
     reaction = VideoReaction(video_id=video.id, user_id=user_id, emoji=payload.emoji)
     db.add(reaction)
+    await track_event(
+        db,
+        event_name="video_reacted",
+        user_id=user_id,
+        target_user_id=str(video.user_id),
+        source="server",
+        properties={"video_id": str(video.id), "emoji": payload.emoji},
+    )
     await db.commit()
     return {"ok": True}
 

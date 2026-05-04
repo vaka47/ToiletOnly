@@ -7,6 +7,7 @@ from ..config import settings
 from ..services.moderation import is_nsfw, has_face_image, has_face_video
 
 router = APIRouter(prefix="/media", tags=["media"])
+CHUNK_SIZE = 1024 * 1024
 
 
 @router.post("/upload")
@@ -19,9 +20,15 @@ async def upload_media(
     ext = os.path.splitext(file.filename)[1] if file.filename else ""
     name = f"{user_id}_{uuid.uuid4().hex}{ext}"
     path = os.path.join(settings.media_storage_path, name)
-    with open(path, "wb") as f:
-        content = await file.read()
-        f.write(content)
+    try:
+        with open(path, "wb") as f:
+            while True:
+                chunk = await file.read(CHUNK_SIZE)
+                if not chunk:
+                    break
+                f.write(chunk)
+    finally:
+        await file.close()
     try:
         require_face = purpose in {"toilet_selfie", "profile_photo", "session_video"}
         _, ext = os.path.splitext(path.lower())

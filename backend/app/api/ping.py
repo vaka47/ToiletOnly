@@ -6,6 +6,7 @@ from ..models import DeviceToken, Ping, Block, MatchStatus
 from ..schemas import PingRequest
 from ..security import get_current_user_id
 from ..services.apns import send_push
+from ..services.analytics import track_event
 from ..services.match_policy import find_match_between, ensure_participant_states, apply_status_from_states
 
 router = APIRouter(prefix="/ping", tags=["ping"])
@@ -38,6 +39,15 @@ async def send_ping(
 
     ping = Ping(sender_id=user_id, target_user_id=payload.target_user_id, message=payload.message)
     db.add(ping)
+    await track_event(
+        db,
+        event_name="ping_sent",
+        user_id=user_id,
+        target_user_id=payload.target_user_id,
+        match_id=match_id,
+        source="server",
+        properties={"has_message": bool(payload.message)},
+    )
     await db.commit()
 
     tokens_result = await db.execute(

@@ -13,9 +13,11 @@ backend/uploads/
 # Xcode user data and build outputs
 DerivedData/
 .derived_toiletonly/
+.derived_toiletonly_build/
 *.xcuserstate
 *.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/
+backend/.venv/
 
 # Keep nested repo metadata out of monorepo
 ToiletOnly/.git/

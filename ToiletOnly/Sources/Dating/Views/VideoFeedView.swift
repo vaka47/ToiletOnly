@@ -98,6 +98,7 @@ struct VideoFeedView: View {
                             targetUserId: video.user_id,
                             type: "video",
                             reason: reason,
+                            objectId: video.id,
                             token: authViewModel.token()
                         )
                     }

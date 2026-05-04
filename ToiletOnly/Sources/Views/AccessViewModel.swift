@@ -34,7 +34,8 @@ final class AccessViewModel: ObservableObject {
     private let requiredHits = 7
     private let requiredStreak = 4
     private let minConfidence: Float = 0.58
-    private let minFrameInterval: TimeInterval = 0.20
+    private let minFrameInterval: TimeInterval = 0.14
+    private let stableFrameInterval: TimeInterval = 0.22
     private var currentStreak: Int = 0
 
     var unlockProgress: Double {
@@ -91,7 +92,8 @@ final class AccessViewModel: ObservableObject {
                 }
             }
 
-            if now.timeIntervalSince(self.lastProcessTime) < self.minFrameInterval { return }
+            let frameInterval = self.isToiletInFrame ? self.stableFrameInterval : self.minFrameInterval
+            if now.timeIntervalSince(self.lastProcessTime) < frameInterval { return }
             self.lastProcessTime = now
 
             DispatchQueue.main.async {
@@ -186,6 +188,14 @@ final class AccessViewModel: ObservableObject {
             return L10n.text("раковину", "sink")
         case "refrigerator":
             return L10n.text("холодильник", "refrigerator")
+        case "cup":
+            return L10n.text("кружку", "cup")
+        case "bowl":
+            return L10n.text("миску", "bowl")
+        case "wine glass":
+            return L10n.text("бокал", "wine glass")
+        case "bottle":
+            return L10n.text("бутылку", "bottle")
         case "microwave":
             return L10n.text("микроволновку", "microwave")
         case "oven":
@@ -196,6 +206,8 @@ final class AccessViewModel: ObservableObject {
             return L10n.text("ноутбук", "laptop")
         case "flat appliance":
             return L10n.text("ровную белую поверхность", "a flat white surface")
+        case "round_top_view":
+            return L10n.text("круглый предмет сверху", "a round object from above")
         default:
             return label
         }

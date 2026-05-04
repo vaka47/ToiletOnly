@@ -33,6 +33,7 @@ from ..schemas import (
     SessionStateRequest,
 )
 from ..security import get_current_user_id
+from ..services.analytics import track_event
 from ..services.apns import send_push
 from ..services.match_policy import consume_sessions_on_start
 from math import radians, sin, cos, sqrt, atan2
@@ -93,6 +94,18 @@ async def setup_profile(
         profile.consent_photo_ai = payload.consent_photo_ai
         if payload.toilet_selfie_url:
             profile.toilet_selfie_url = payload.toilet_selfie_url
+    await track_event(
+        db,
+        event_name="profile_setup_completed",
+        user_id=str(user.id),
+        source="server",
+        properties={
+            "photo_count": len(payload.photos),
+            "interest_count": len(payload.interests),
+            "looking_for_count": len(payload.looking_for_genders),
+            "hide_age": payload.hide_age,
+        },
+    )
     await db.commit()
     return ProfileOut(
         user_id=user_id,
@@ -188,6 +201,14 @@ async def update_session_video(
     )
     db.add(video)
     author = (await db.execute(select(User).where(User.id == user_id))).scalar_one()
+    await db.flush()
+    await track_event(
+        db,
+        event_name="video_published",
+        user_id=user_id,
+        source="server",
+        properties={"caption_length": len(payload.caption.strip()), "video_id": str(video.id)},
+    )
     await db.commit()
     follower_rows = (
         await db.execute(
@@ -228,6 +249,14 @@ async def update_session_state(
             profile.superlike_used_in_session = False
         profile.session_expires_at = datetime.now(timezone.utc) + timedelta(minutes=15)
         consumed = await consume_sessions_on_start(db, profile.user_id)
+        if not was_online:
+            await track_event(
+                db,
+                event_name="session_started",
+                user_id=user_id,
+                source="server",
+                properties={"consumed_matches": consumed},
+            )
     else:
         profile.session_expires_at = None
         videos = await db.execute(
@@ -236,6 +265,14 @@ async def update_session_state(
         for item in videos.scalars().all():
             item.comments_locked = True
             db.add(item)
+        if was_online:
+            await track_event(
+                db,
+                event_name="session_ended",
+                user_id=user_id,
+                source="server",
+                properties={},
+            )
 
     await db.commit()
     return {"ok": True, "consumed_matches": consumed}

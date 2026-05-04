@@ -1,7 +1,7 @@
 from typing import List, Optional
 from pydantic import conlist
 from pydantic import BaseModel, Field
-from .models import Tone, MatchStatus, ReportType
+from .models import Tone, MatchStatus, ReportType, ReportStatus
 
 
 class AuthRequest(BaseModel):
@@ -76,6 +76,7 @@ class ReportRequest(BaseModel):
     target_user_id: str
     report_type: ReportType
     reason: Optional[str] = None
+    object_id: Optional[str] = Field(default=None, max_length=128)
 
 
 class BlockRequest(BaseModel):
@@ -246,3 +247,51 @@ class ActivityItemOut(BaseModel):
     match_id: Optional[str] = None
     video_id: Optional[str] = None
     created_at: str
+
+
+class ReportModerationOut(BaseModel):
+    id: str
+    reporter_user_id: str
+    reporter_display_name: str
+    target_user_id: str
+    target_display_name: str
+    report_type: ReportType
+    object_id: Optional[str] = None
+    reason: Optional[str] = None
+    status: ReportStatus
+    reviewed_at: Optional[str] = None
+    reviewed_note: Optional[str] = None
+    created_at: str
+
+
+class ReportModerationUpdate(BaseModel):
+    status: ReportStatus
+    reviewed_note: Optional[str] = Field(default=None, max_length=500)
+
+
+class ModerationSummaryOut(BaseModel):
+    open_count: int
+    reviewing_count: int
+    resolved_count: int
+    dismissed_count: int
+
+
+class OpsSummaryOut(BaseModel):
+    window_days: int
+    total_users: int
+    profiles_completed: int
+    activated_users: int
+    session_starts: int
+    likes_sent: int
+    superlikes_sent: int
+    matches_created: int
+    matches_with_messages: int
+    kept_matches: int
+    videos_published: int
+    profile_completion_rate: float
+    activation_rate: float
+    like_to_match_rate: float
+    match_to_first_message_rate: float
+    message_to_kept_rate: float
+    video_publish_rate: float
+    moderation: ModerationSummaryOut

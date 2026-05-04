@@ -4,9 +4,10 @@ from datetime import datetime, timezone
 
 from sqlalchemy import select, and_, or_
 from ..db import get_db
-from ..models import Match, Block, User, Profile, Message, MatchParticipantState, Like, Pass
+from ..models import Match, MatchStatus, Block, User, Profile, Message, MatchParticipantState, Like, Pass
 from ..schemas import MatchKeepRequest, MatchOut, MatchListItemOut
 from ..security import get_current_user_id
+from ..services.analytics import track_event
 from ..services.match_policy import ensure_participant_states, apply_status_from_states, build_match_out
 
 router = APIRouter(prefix="/matches", tags=["matches"])
@@ -113,6 +114,23 @@ async def keep_match(
     db.add(state)
 
     await apply_status_from_states(db, match, states)
+    await track_event(
+        db,
+        event_name="match_keep_requested",
+        user_id=user_id,
+        match_id=str(match.id),
+        source="server",
+        properties={},
+    )
+    if match.status == MatchStatus.kept:
+        await track_event(
+            db,
+            event_name="match_kept",
+            user_id=user_id,
+            match_id=str(match.id),
+            source="server",
+            properties={},
+        )
     await db.commit()
     await db.refresh(match)
     return MatchOut(**build_match_out(match, states, user_id))

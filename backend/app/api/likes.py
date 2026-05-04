@@ -12,6 +12,7 @@ from ..models import Like, Match, MatchStatus, Block, Profile, Pass, DeviceToken
 from ..schemas import LikeRequest, MatchOut, IncomingLikeOut
 from ..security import get_current_user_id
 from ..services.apns import send_push
+from ..services.analytics import track_event
 from ..services.match_policy import ensure_participant_states, apply_status_from_states, find_match_between, build_match_out
 
 router = APIRouter(prefix="/likes", tags=["likes"])
@@ -110,6 +111,14 @@ async def like_user(
 
     if payload.action == "pass":
         db.add(Pass(from_user_id=user_id, to_user_id=payload.to_user_id))
+        await track_event(
+            db,
+            event_name="pass_sent",
+            user_id=user_id,
+            target_user_id=payload.to_user_id,
+            source="server",
+            properties={},
+        )
         await db.commit()
         return None
 
@@ -140,6 +149,14 @@ async def like_user(
         intro_message=payload.message.strip() if payload.message else None,
     )
     await db.merge(like)
+    await track_event(
+        db,
+        event_name="superlike_sent" if payload.action == "superlike" else "like_sent",
+        user_id=user_id,
+        target_user_id=payload.to_user_id,
+        source="server",
+        properties={"has_message": bool(payload.message and payload.message.strip())},
+    )
     await db.commit()
 
     tokens_result = await db.execute(select(DeviceToken).where(DeviceToken.user_id == payload.to_user_id))
@@ -175,6 +192,15 @@ async def like_user(
     if existing_match and existing_match.status != MatchStatus.expired:
         states = await ensure_participant_states(db, existing_match)
         await apply_status_from_states(db, existing_match, states)
+        await track_event(
+            db,
+            event_name="match_created",
+            user_id=user_id,
+            target_user_id=payload.to_user_id,
+            match_id=str(existing_match.id),
+            source="server",
+            properties={"existing": True},
+        )
         await db.commit()
         await db.refresh(existing_match)
         return MatchOut(**build_match_out(existing_match, states, user_id))
@@ -188,6 +214,15 @@ async def like_user(
     for intro in intro_candidates:
         if intro and intro.like_type == "superlike" and intro.intro_message:
             db.add(Message(match_id=match.id, sender_id=intro.from_user_id, text=intro.intro_message))
+    await track_event(
+        db,
+        event_name="match_created",
+        user_id=user_id,
+        target_user_id=payload.to_user_id,
+        match_id=str(match.id),
+        source="server",
+        properties={"existing": False},
+    )
     await db.commit()
     await db.refresh(match)
     return MatchOut(**build_match_out(match, states, user_id))

@@ -16,6 +16,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        UserDefaults.standard.set(token, forKey: "apns_device_token")
         Task {
             let authToken = UserDefaults.standard.string(forKey: "auth_token")
             await DeviceService.shared.register(token: token, authToken: authToken)

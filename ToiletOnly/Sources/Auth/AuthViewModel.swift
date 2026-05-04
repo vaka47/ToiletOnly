@@ -7,6 +7,7 @@ final class AuthViewModel: ObservableObject {
     @AppStorage("auth_token") private var authToken: String = ""
     @AppStorage("auth_user_id") private var authUserId: String = ""
     @AppStorage("auth_provider") private var authProvider: String = ""
+    @AppStorage("mock_apple_sub") private var mockAppleSub: String = ""
 
     @Published var isLoading: Bool = false
     @Published var authError: String?
@@ -15,10 +16,23 @@ final class AuthViewModel: ObservableObject {
         !authToken.isEmpty && !authUserId.isEmpty
     }
 
-    func signInMock(provider: String = "apple") {
-        authToken = "mock_\(UUID().uuidString)"
-        authUserId = UUID().uuidString
-        authProvider = provider
+    func signInMock(provider: String = "mock") {
+        if mockAppleSub.isEmpty {
+            mockAppleSub = "mock:\(UUID().uuidString)"
+        }
+        isLoading = true
+        authError = nil
+        Task {
+            if let response = await AuthService.shared.signInWithApple(idToken: mockAppleSub) {
+                authToken = response.access_token
+                authUserId = response.user_id
+                authProvider = provider
+                await registerDeviceIfNeeded()
+            } else {
+                authError = L10n.text("Не удалось войти в demo mode", "Failed to sign in to demo mode")
+            }
+            isLoading = false
+        }
     }
 
     func signInWithApple(credential: ASAuthorizationAppleIDCredential) async {
@@ -32,6 +46,7 @@ final class AuthViewModel: ObservableObject {
             authToken = response.access_token
             authUserId = response.user_id
             authProvider = "apple"
+            await registerDeviceIfNeeded()
         } else {
             authError = "Ошибка авторизации"
         }
@@ -50,5 +65,10 @@ final class AuthViewModel: ObservableObject {
 
     func userId() -> String? {
         authUserId.isEmpty ? nil : authUserId
+    }
+
+    private func registerDeviceIfNeeded() async {
+        guard let deviceToken = UserDefaults.standard.string(forKey: "apns_device_token"), !deviceToken.isEmpty else { return }
+        await DeviceService.shared.register(token: deviceToken, authToken: authToken)
     }
 }

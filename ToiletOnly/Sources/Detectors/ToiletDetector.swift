@@ -46,6 +46,7 @@ final class ToiletDetector: ToiletDetecting {
         let seatContrast: Float
         let centerDarkness: Float
         let whiteRatio: Float
+        let ringAspectRatio: Float
     }
 
     private struct SceneGuardResult {
@@ -56,7 +57,7 @@ final class ToiletDetector: ToiletDetecting {
         let negativeConfidence: Float
     }
 
-    private let queue = DispatchQueue(label: "toilet.detector.queue")
+    private let queue = DispatchQueue(label: "toilet.detector.queue", qos: .userInitiated)
     private let model: VNCoreMLModel?
     private let sceneGuardModel: VNCoreMLModel?
     private let modelLoadMessage: String
@@ -64,6 +65,8 @@ final class ToiletDetector: ToiletDetecting {
     private let minimumRawConfidence: Float = 0.48
     private let minimumCombinedConfidence: Float = 0.58
     private let minimumGeometryScore: Float = 0.10
+    private let sceneGuardTriggerConfidence: Float = 0.34
+    private let structureValidationTriggerConfidence: Float = 0.54
     private static let ciContext = CIContext(options: nil)
     private static let colorSpace = CGColorSpaceCreateDeviceRGB()
 
@@ -84,12 +87,13 @@ final class ToiletDetector: ToiletDetecting {
     private static let cocoToiletIndex = 61
     private static let negativeSceneLabels: Set<String> = [
         "chair", "couch", "bed", "dining table", "sink", "refrigerator", "microwave",
-        "oven", "tv", "laptop"
+        "oven", "tv", "laptop", "cup", "bowl", "wine glass", "bottle"
     ]
+    private static let drinkwareSceneLabels: Set<String> = ["cup", "bowl", "wine glass", "bottle"]
 
     init() {
         let config = MLModelConfiguration()
-        config.computeUnits = .all
+        config.computeUnits = .cpuAndNeuralEngine
         var loadMessage = ""
 
         if let loaded = Self.loadModel(named: "ToiletDetector", configuration: config, loadMessage: &loadMessage) {
@@ -124,7 +128,9 @@ final class ToiletDetector: ToiletDetecting {
 
         queue.async {
             let toilet = self.runToiletModel(model, pixelBuffer: pixelBuffer, orientation: orientation)
-            let scene = self.runSceneGuard(pixelBuffer: pixelBuffer, orientation: orientation)
+            let scene = self.shouldRunSceneGuard(for: toilet)
+                ? self.runSceneGuard(pixelBuffer: pixelBuffer, orientation: orientation)
+                : nil
 
             guard let candidate = toilet.candidate else {
                 completion(
@@ -268,8 +274,11 @@ final class ToiletDetector: ToiletDetecting {
         orientation: CGImagePropertyOrientation
     ) -> ToiletDetectionResult {
         let geometryScore = Self.unlockGeometryScore(candidate)
-        let structure = structureValidation(for: candidate, pixelBuffer: pixelBuffer, orientation: orientation)
         let sceneToilet = scene?.toiletConfidence ?? 0
+        let shouldValidateStructure = candidate.rawConfidence >= structureValidationTriggerConfidence || sceneToilet >= 0.24
+        let structure = shouldValidateStructure
+            ? structureValidation(for: candidate, pixelBuffer: pixelBuffer, orientation: orientation)
+            : StructureValidation(score: 0.32, seatContrast: 0, centerDarkness: 0, whiteRatio: 0.5)
         let sceneNegativeLabel = scene?.negativeLabel ?? "none"
         let sceneNegativeConfidence = scene?.negativeConfidence ?? 0
         let hasSceneToilet = sceneToilet >= 0.24
@@ -279,9 +288,21 @@ final class ToiletDetector: ToiletDetecting {
 
         let sceneBlocks = sceneNegativeConfidence >= 0.44 &&
             sceneNegativeConfidence >= sceneToilet + 0.12
+        let drinkwareBlocks = Self.drinkwareSceneLabels.contains(sceneNegativeLabel) &&
+            sceneNegativeConfidence >= max(0.18, sceneToilet + 0.06)
         let chairBlocks = sceneNegativeLabel == "chair" &&
             sceneNegativeConfidence >= 0.34 &&
             candidate.rawConfidence < 0.93
+        let roundTopViewBlocks = !hasSceneToilet &&
+            candidate.rawConfidence >= 0.56 &&
+            abs(candidate.width - candidate.height) <= 0.10 &&
+            abs(candidate.centerX - 0.50) <= 0.12 &&
+            abs(candidate.centerY - 0.50) <= 0.12 &&
+            abs(structure.ringAspectRatio - 1.0) <= 0.12 &&
+            structure.seatContrast >= 0.05 &&
+            structure.centerDarkness >= 0.16 &&
+            structure.whiteRatio <= 0.72 &&
+            !hasVeryHighCustomToilet
         let flatSurfaceBlocks = candidate.rawConfidence >= 0.65 &&
             candidate.height >= 0.72 &&
             candidate.width <= 0.58 &&
@@ -294,15 +315,21 @@ final class ToiletDetector: ToiletDetecting {
         let semanticMismatchBlocks = candidate.rawConfidence >= 0.55 &&
             !hasSceneToilet &&
             !hasVeryHighCustomToilet
-        let blocked = sceneBlocks || chairBlocks || flatSurfaceBlocks || weakStructureBlocks || semanticMismatchBlocks
+        let blocked = sceneBlocks || drinkwareBlocks || chairBlocks || roundTopViewBlocks || flatSurfaceBlocks || weakStructureBlocks || semanticMismatchBlocks
         let blockedLabel: String
         let blockedConfidence: Float
         if sceneBlocks {
             blockedLabel = sceneNegativeLabel
             blockedConfidence = sceneNegativeConfidence
+        } else if drinkwareBlocks {
+            blockedLabel = sceneNegativeLabel
+            blockedConfidence = sceneNegativeConfidence
         } else if chairBlocks {
             blockedLabel = "chair"
             blockedConfidence = sceneNegativeConfidence
+        } else if roundTopViewBlocks {
+            blockedLabel = "round_top_view"
+            blockedConfidence = candidate.rawConfidence
         } else if flatSurfaceBlocks {
             blockedLabel = "flat appliance"
             blockedConfidence = candidate.rawConfidence
@@ -383,6 +410,19 @@ final class ToiletDetector: ToiletDetecting {
         )
     }
 
+    private func shouldRunSceneGuard(
+        for toiletResult: (candidate: DetectionCandidate?, bestLabel: String, bestLabelConfidence: Float)
+    ) -> Bool {
+        guard sceneGuardModel != nil else { return false }
+        if let candidate = toiletResult.candidate, candidate.rawConfidence >= sceneGuardTriggerConfidence {
+            return true
+        }
+        if Self.negativeSceneLabels.contains(toiletResult.bestLabel), toiletResult.bestLabelConfidence >= 0.28 {
+            return true
+        }
+        return toiletResult.bestLabelConfidence >= 0.52
+    }
+
     private static func selectionGeometryAffinity(for candidate: DetectionCandidate) -> Float {
         let area = candidate.width * candidate.height
         let bottomY = candidate.centerY + candidate.height * 0.5
@@ -450,7 +490,7 @@ final class ToiletDetector: ToiletDetecting {
             .oriented(forExifOrientation: Int32(orientation.rawValue))
         let extent = image.extent.integral
         guard extent.width > 0, extent.height > 0 else {
-            return StructureValidation(score: 0, seatContrast: 0, centerDarkness: 0, whiteRatio: 1)
+            return StructureValidation(score: 0, seatContrast: 0, centerDarkness: 0, whiteRatio: 1, ringAspectRatio: 1)
         }
 
         let normalizedRect = CGRect(
@@ -468,7 +508,7 @@ final class ToiletDetector: ToiletDetecting {
         ).intersection(extent)
 
         guard cropRect.width >= 24, cropRect.height >= 24 else {
-            return StructureValidation(score: 0, seatContrast: 0, centerDarkness: 0, whiteRatio: 1)
+            return StructureValidation(score: 0, seatContrast: 0, centerDarkness: 0, whiteRatio: 1, ringAspectRatio: 1)
         }
 
         let sampleSide = 48
@@ -527,6 +567,32 @@ final class ToiletDetector: ToiletDetecting {
         let variance = max(0, brightnessSquareSum / pixelCount - meanBrightness * meanBrightness)
         let brightnessStdDev = sqrt(variance)
         let whiteRatio = whiteMask.reduce(0, +) / pixelCount
+
+        func maskSpanLengths(_ mask: [Float], threshold: Float = 0.5) -> (horizontal: Float, vertical: Float) {
+            let centerRow = sampleSide / 2
+            let centerCol = sampleSide / 2
+            var minCol = sampleSide
+            var maxCol = -1
+            var minRow = sampleSide
+            var maxRow = -1
+
+            for col in 0..<sampleSide {
+                if mask[centerRow * sampleSide + col] >= threshold {
+                    minCol = min(minCol, col)
+                    maxCol = max(maxCol, col)
+                }
+            }
+            for row in 0..<sampleSide {
+                if mask[row * sampleSide + centerCol] >= threshold {
+                    minRow = min(minRow, row)
+                    maxRow = max(maxRow, row)
+                }
+            }
+
+            let horizontal = maxCol >= minCol ? Float(maxCol - minCol + 1) / Float(sampleSide) : 0
+            let vertical = maxRow >= minRow ? Float(maxRow - minRow + 1) / Float(sampleSide) : 0
+            return (horizontal, vertical)
+        }
 
         func averageValue(
             _ values: [Float],
@@ -589,12 +655,17 @@ final class ToiletDetector: ToiletDetecting {
             Self.clamp01((centerDarkness - 0.06) / 0.28) * 0.45
         let nonWhiteScore = 1 - Self.clamp01((whiteRatio - 0.80) / 0.18)
         let structureScore = seatScore * 0.50 + varianceScore * 0.25 + nonWhiteScore * 0.25
+        let spans = maskSpanLengths(whiteMask)
+        let ringAspectRatio = spans.horizontal > 0.01 && spans.vertical > 0.01
+            ? max(spans.horizontal, spans.vertical) / max(0.01, min(spans.horizontal, spans.vertical))
+            : 1
 
         return StructureValidation(
             score: structureScore,
             seatContrast: seatContrast,
             centerDarkness: centerDarkness,
-            whiteRatio: whiteRatio
+            whiteRatio: whiteRatio,
+            ringAspectRatio: ringAspectRatio
         )
     }
 

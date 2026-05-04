@@ -6,8 +6,8 @@ import ImageIO
 final class CameraController: NSObject, ObservableObject {
     let session = AVCaptureSession()
     private let videoOutput = AVCaptureVideoDataOutput()
-    private let outputQueue = DispatchQueue(label: "camera.output.queue")
-    private let sessionQueue = DispatchQueue(label: "camera.session.queue")
+    private let outputQueue = DispatchQueue(label: "camera.output.queue", qos: .userInitiated)
+    private let sessionQueue = DispatchQueue(label: "camera.session.queue", qos: .userInitiated)
 
     var onFrame: ((CVPixelBuffer, CGImagePropertyOrientation) -> Void)?
 
@@ -18,7 +18,7 @@ final class CameraController: NSObject, ObservableObject {
 
     private func configureSession() {
         session.beginConfiguration()
-        session.sessionPreset = .high
+        session.sessionPreset = session.canSetSessionPreset(.hd1280x720) ? .hd1280x720 : .high
 
         guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
               let input = try? AVCaptureDeviceInput(device: device),
@@ -28,6 +28,7 @@ final class CameraController: NSObject, ObservableObject {
         }
 
         session.addInput(input)
+        configureCaptureDevice(device)
 
         videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
         videoOutput.alwaysDiscardsLateVideoFrames = true
@@ -71,6 +72,24 @@ extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
 }
 
 private extension CameraController {
+    func configureCaptureDevice(_ device: AVCaptureDevice) {
+        do {
+            try device.lockForConfiguration()
+            if device.isFocusModeSupported(.continuousAutoFocus) {
+                device.focusMode = .continuousAutoFocus
+            }
+            if device.isExposureModeSupported(.continuousAutoExposure) {
+                device.exposureMode = .continuousAutoExposure
+            }
+            let targetFrameDuration = CMTime(value: 1, timescale: 30)
+            device.activeVideoMinFrameDuration = targetFrameDuration
+            device.activeVideoMaxFrameDuration = targetFrameDuration
+            device.unlockForConfiguration()
+        } catch {
+            NSLog("CameraController: failed to configure device: %@", String(describing: error))
+        }
+    }
+
     static func currentOrientation() -> CGImagePropertyOrientation {
         // Back camera + portrait is the expected usage for this app.
         switch UIDevice.current.orientation {

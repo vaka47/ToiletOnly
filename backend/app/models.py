@@ -1,6 +1,6 @@
 import enum
 import uuid
-from sqlalchemy import Column, String, Integer, DateTime, Boolean, ForeignKey, Text, Enum, ARRAY, Float
+from sqlalchemy import Column, String, Integer, DateTime, Boolean, ForeignKey, Text, Enum, ARRAY, Float, JSON
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.sql import func
 from .db import Base
@@ -25,6 +25,13 @@ class ReportType(str, enum.Enum):
     video = "video"
     chat = "chat"
     profile = "profile"
+
+
+class ReportStatus(str, enum.Enum):
+    open = "open"
+    reviewing = "reviewing"
+    resolved = "resolved"
+    dismissed = "dismissed"
 
 
 class User(Base):
@@ -161,7 +168,12 @@ class Report(Base):
     reporter_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
     target_user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
     report_type = Column(Enum(ReportType), nullable=False)
+    object_id = Column(String, nullable=True)
     reason = Column(Text, nullable=True)
+    status = Column(Enum(ReportStatus), nullable=False, default=ReportStatus.open)
+    reviewed_at = Column(DateTime(timezone=True), nullable=True)
+    reviewed_note = Column(Text, nullable=True)
+    reviewer_user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
 
@@ -201,4 +213,17 @@ class Ping(Base):
     sender_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
     target_user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
     message = Column(Text, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class AnalyticsEvent(Base):
+    __tablename__ = "analytics_events"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=True)
+    target_user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=True)
+    match_id = Column(UUID(as_uuid=True), ForeignKey("matches.id"), nullable=True)
+    event_name = Column(String, nullable=False)
+    source = Column(String, nullable=False, default="server")
+    properties = Column(JSON, nullable=False, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())

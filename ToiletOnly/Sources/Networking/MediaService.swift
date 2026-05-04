@@ -38,19 +38,16 @@ final class MediaService {
 
         let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 300
 
-        let fileData = try Data(contentsOf: fileURL)
-        let filename = fileURL.lastPathComponent
-        var body = Data()
-        body.append("--\(boundary)\r\n".data(using: .utf8)!)
-        body.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
-        body.append("Content-Type: \(mimeType)\r\n\r\n".data(using: .utf8)!)
-        body.append(fileData)
-        body.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+        let bodyFileURL = try makeMultipartBodyFile(
+            sourceFileURL: fileURL,
+            mimeType: mimeType,
+            boundary: boundary
+        )
+        defer { try? FileManager.default.removeItem(at: bodyFileURL) }
 
-        request.httpBody = body
-
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await APIClient.shared.upload(request: request, fromFile: bodyFileURL)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }
@@ -68,6 +65,35 @@ final class MediaService {
         }
         let decoded = try JSONDecoder().decode(MediaUploadResponse.self, from: data)
         return decoded.asset_url
+    }
+
+    private func makeMultipartBodyFile(
+        sourceFileURL: URL,
+        mimeType: String,
+        boundary: String
+    ) throws -> URL {
+        let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("upload_\(UUID().uuidString).tmp")
+        FileManager.default.createFile(atPath: tempURL.path, contents: nil)
+        let handle = try FileHandle(forWritingTo: tempURL)
+        defer { try? handle.close() }
+
+        let filename = sourceFileURL.lastPathComponent
+        try handle.write(contentsOf: Data("--\(boundary)\r\n".utf8))
+        try handle.write(contentsOf: Data("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n".utf8))
+        try handle.write(contentsOf: Data("Content-Type: \(mimeType)\r\n\r\n".utf8))
+
+        let sourceHandle = try FileHandle(forReadingFrom: sourceFileURL)
+        defer { try? sourceHandle.close() }
+        while true {
+            let chunk = sourceHandle.readData(ofLength: 1024 * 1024)
+            if chunk.isEmpty {
+                break
+            }
+            try handle.write(contentsOf: chunk)
+        }
+
+        try handle.write(contentsOf: Data("\r\n--\(boundary)--\r\n".utf8))
+        return tempURL
     }
 }
 

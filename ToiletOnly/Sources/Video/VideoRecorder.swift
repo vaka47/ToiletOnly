@@ -15,7 +15,10 @@ final class VideoRecorder: NSObject, ObservableObject {
     private let session = AVCaptureSession()
     private let movieOutput = AVCaptureMovieFileOutput()
     private let videoDataOutput = AVCaptureVideoDataOutput()
-    private let queue = DispatchQueue(label: "video.recorder.queue")
+    private let sessionQueue = DispatchQueue(label: "video.recorder.session.queue", qos: .userInitiated)
+    private let visionQueue = DispatchQueue(label: "video.recorder.vision.queue", qos: .userInitiated)
+    private let faceRequest = VNDetectFaceRectanglesRequest()
+    private let sequenceRequestHandler = VNSequenceRequestHandler()
     private lazy var previewLayer: AVCaptureVideoPreviewLayer = {
         let layer = AVCaptureVideoPreviewLayer(session: session)
         layer.videoGravity = .resizeAspectFill
@@ -43,13 +46,13 @@ final class VideoRecorder: NSObject, ObservableObject {
     }
 
     func startSession() {
-        queue.async {
+        sessionQueue.async {
             self.ensureCameraAccessAndStartSession()
         }
     }
 
     func stopSession() {
-        queue.async {
+        sessionQueue.async {
             if self.session.isRunning {
                 self.session.stopRunning()
             }
@@ -72,56 +75,60 @@ final class VideoRecorder: NSObject, ObservableObject {
     }
 
     func startRecording(maxDuration: TimeInterval = 60) {
-        guard !movieOutput.isRecording else { return }
+        sessionQueue.async {
+            guard !self.movieOutput.isRecording else { return }
 
-        if cameraAccessDenied {
+            if self.cameraAccessDenied {
+                DispatchQueue.main.async {
+                    self.faceStatusText = "Разреши доступ к камере"
+                }
+                self.publishError("camera_denied")
+                return
+            }
+
+            if !self.isSessionReady {
+                DispatchQueue.main.async {
+                    self.faceStatusText = "Камера еще запускается"
+                }
+                self.startSession()
+                self.publishError("camera_preparing")
+                return
+            }
+
+            guard self.isFaceVisible else {
+                DispatchQueue.main.async {
+                    self.faceStatusText = "Запись доступна только когда лицо в кадре"
+                }
+                self.publishError("record_face_required")
+                return
+            }
+
+            self.resetDraft()
+
+            let url = FileManager.default.temporaryDirectory.appendingPathComponent("session_\(UUID().uuidString).mov")
+            self.movieOutput.maxRecordedDuration = CMTime(seconds: maxDuration, preferredTimescale: 1)
+            if let connection = self.movieOutput.connection(with: .video) {
+                if connection.isVideoOrientationSupported {
+                    connection.videoOrientation = .portrait
+                }
+                if connection.isVideoMirroringSupported {
+                    connection.isVideoMirrored = true
+                }
+            }
+            self.movieOutput.startRecording(to: url, recordingDelegate: self)
             DispatchQueue.main.async {
-                self.faceStatusText = "Разреши доступ к камере"
+                self.isRecording = true
+                self.didStopBecauseFaceLost = false
+                self.lastErrorMessage = nil
             }
-            publishError("camera_denied")
-            return
-        }
-
-        if !isSessionReady {
-            DispatchQueue.main.async {
-                self.faceStatusText = "Камера еще запускается"
-            }
-            startSession()
-            publishError("camera_preparing")
-            return
-        }
-
-        guard isFaceVisible else {
-            DispatchQueue.main.async {
-                self.faceStatusText = "Запись доступна только когда лицо в кадре"
-            }
-            publishError("record_face_required")
-            return
-        }
-
-        resetDraft()
-
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("session_\(UUID().uuidString).mov")
-        movieOutput.maxRecordedDuration = CMTime(seconds: maxDuration, preferredTimescale: 1)
-        if let connection = movieOutput.connection(with: .video) {
-            if connection.isVideoOrientationSupported {
-                connection.videoOrientation = .portrait
-            }
-            if connection.isVideoMirroringSupported {
-                connection.isVideoMirrored = true
-            }
-        }
-        movieOutput.startRecording(to: url, recordingDelegate: self)
-        DispatchQueue.main.async {
-            self.isRecording = true
-            self.didStopBecauseFaceLost = false
-            self.lastErrorMessage = nil
         }
     }
 
     func stopRecording() {
-        guard movieOutput.isRecording else { return }
-        movieOutput.stopRecording()
+        sessionQueue.async {
+            guard self.movieOutput.isRecording else { return }
+            self.movieOutput.stopRecording()
+        }
     }
 
     func makePreviewLayer() -> AVCaptureVideoPreviewLayer {
@@ -138,7 +145,7 @@ final class VideoRecorder: NSObject, ObservableObject {
             startRunningSessionIfNeeded()
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { granted in
-                self.queue.async {
+                self.sessionQueue.async {
                     DispatchQueue.main.async {
                         self.cameraAccessDenied = !granted
                         self.faceStatusText = granted ? "Готовим камеру" : "Разреши доступ к камере"
@@ -173,7 +180,7 @@ final class VideoRecorder: NSObject, ObservableObject {
         guard !isConfigured else { return }
 
         session.beginConfiguration()
-        session.sessionPreset = .high
+        session.sessionPreset = session.canSetSessionPreset(.hd1280x720) ? .hd1280x720 : .high
 
         defer {
             session.commitConfiguration()
@@ -191,6 +198,7 @@ final class VideoRecorder: NSObject, ObservableObject {
                 session.addInput(input)
                 videoDeviceInput = input
             }
+            configureVideoDevice(videoDevice)
 
             if let audioDevice = AVCaptureDevice.default(for: .audio) {
                 try? configureAudioInput(with: audioDevice)
@@ -201,9 +209,17 @@ final class VideoRecorder: NSObject, ObservableObject {
             }
             videoDataOutput.alwaysDiscardsLateVideoFrames = true
             videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
-            videoDataOutput.setSampleBufferDelegate(self, queue: queue)
+            videoDataOutput.setSampleBufferDelegate(self, queue: visionQueue)
             if session.canAddOutput(videoDataOutput) {
                 session.addOutput(videoDataOutput)
+                if let connection = videoDataOutput.connection(with: .video) {
+                    if connection.isVideoOrientationSupported {
+                        connection.videoOrientation = .portrait
+                    }
+                    if connection.isVideoMirroringSupported {
+                        connection.isVideoMirrored = true
+                    }
+                }
             }
         } catch {
             publishError(error.localizedDescription)
@@ -221,7 +237,7 @@ final class VideoRecorder: NSObject, ObservableObject {
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .audio) { granted in
                 guard granted else { return }
-                self.queue.async {
+                self.sessionQueue.async {
                     guard self.audioDeviceInput == nil else { return }
                     do {
                         let input = try AVCaptureDeviceInput(device: device)
@@ -238,6 +254,24 @@ final class VideoRecorder: NSObject, ObservableObject {
             }
         default:
             break
+        }
+    }
+
+    private func configureVideoDevice(_ device: AVCaptureDevice) {
+        do {
+            try device.lockForConfiguration()
+            if device.isFocusModeSupported(.continuousAutoFocus) {
+                device.focusMode = .continuousAutoFocus
+            }
+            if device.isExposureModeSupported(.continuousAutoExposure) {
+                device.exposureMode = .continuousAutoExposure
+            }
+            let targetFrameDuration = CMTime(value: 1, timescale: 30)
+            device.activeVideoMinFrameDuration = targetFrameDuration
+            device.activeVideoMaxFrameDuration = targetFrameDuration
+            device.unlockForConfiguration()
+        } catch {
+            publishError(error.localizedDescription)
         }
     }
 
@@ -311,11 +345,9 @@ extension VideoRecorder: AVCaptureVideoDataOutputSampleBufferDelegate {
         lastVisionRunAt = now
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
-        let request = VNDetectFaceRectanglesRequest()
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .leftMirrored, options: [:])
         do {
-            try handler.perform([request])
-            let hasFace = !(request.results ?? []).isEmpty
+            try sequenceRequestHandler.perform([faceRequest], on: pixelBuffer, orientation: .leftMirrored)
+            let hasFace = !(faceRequest.results ?? []).isEmpty
             updateFaceState(hasFace: hasFace)
         } catch {
             updateFaceState(hasFace: false)

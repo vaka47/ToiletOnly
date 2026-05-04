@@ -277,6 +277,7 @@ struct LiveDatingView: View {
                                 targetUserId: profile.remoteUserId,
                                 type: "profile",
                                 reason: reportReason,
+                                objectId: profile.remoteUserId,
                                 token: authViewModel.token()
                             )
                         }

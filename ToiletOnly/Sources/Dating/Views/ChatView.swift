@@ -81,6 +81,7 @@ struct ChatView: View {
                                     targetUserId: currentMatch.profile.remoteUserId,
                                     type: "chat",
                                     reason: reportReason.trimmingCharacters(in: .whitespacesAndNewlines),
+                                    objectId: currentMatch.id.uuidString,
                                     token: authViewModel.token()
                                 )
                                 reportReason = ""

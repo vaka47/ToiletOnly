@@ -1,8 +1,13 @@
+from __future__ import annotations
+
 import os
 import tempfile
 from typing import Iterable, Optional
 
-import cv2
+try:
+    import cv2
+except Exception:
+    cv2 = None
 
 try:
     from nudenet import NudeClassifier
@@ -17,8 +22,10 @@ _FACE_CASCADE = None
 _NUDE_CLASSIFIER = None
 
 
-def _get_face_cascade() -> cv2.CascadeClassifier:
+def _get_face_cascade():
     global _FACE_CASCADE
+    if cv2 is None:
+        return None
     if _FACE_CASCADE is None:
         path = os.path.join(cv2.data.haarcascades, "haarcascade_frontalface_default.xml")
         _FACE_CASCADE = cv2.CascadeClassifier(path)
@@ -59,7 +66,7 @@ def _nudenet_score_from_path(path: str) -> Optional[float]:
 
 def _nudenet_score_from_frame(frame) -> Optional[float]:
     classifier = _get_nude_classifier()
-    if classifier is None:
+    if classifier is None or cv2 is None:
         return None
     with tempfile.NamedTemporaryFile(suffix=".jpg", delete=True) as tmp:
         try:
@@ -70,10 +77,12 @@ def _nudenet_score_from_frame(frame) -> Optional[float]:
 
 
 def _count_faces(image) -> int:
-    if image is None:
+    if image is None or cv2 is None:
         return 0
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     cascade = _get_face_cascade()
+    if cascade is None:
+        return 0
     faces = cascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
@@ -84,7 +93,7 @@ def _count_faces(image) -> int:
 
 
 def _skin_ratio_bgr(image) -> float:
-    if image is None:
+    if image is None or cv2 is None:
         return 0.0
     h, w = image.shape[:2]
     if h == 0 or w == 0:
@@ -99,6 +108,8 @@ def _skin_ratio_bgr(image) -> float:
 
 
 def _sample_video_frames(path: str, count: int = 5) -> Iterable:
+    if cv2 is None:
+        return []
     cap = cv2.VideoCapture(path)
     if not cap.isOpened():
         return []
@@ -117,9 +128,10 @@ def _sample_video_frames(path: str, count: int = 5) -> Iterable:
 
 
 def is_nsfw_image(path: str, require_face: bool = False) -> bool:
-    image = cv2.imread(path)
+    image = cv2.imread(path) if cv2 is not None else None
     if image is None:
-        return False
+        ml_score = _nudenet_score_from_path(path)
+        return bool(ml_score is not None and ml_score >= 0.5)
     if require_face and _count_faces(image) == 0:
         return True
     ml_score = _nudenet_score_from_path(path)
@@ -147,6 +159,8 @@ def is_nsfw_video(path: str, require_face: bool = False) -> bool:
 
 
 def has_face_image(path: str) -> bool:
+    if cv2 is None:
+        return True
     image = cv2.imread(path)
     if image is None:
         return False
@@ -154,6 +168,8 @@ def has_face_image(path: str) -> bool:
 
 
 def has_face_video(path: str) -> bool:
+    if cv2 is None:
+        return True
     frames = _sample_video_frames(path)
     for frame in frames:
         if _count_faces(frame) > 0:

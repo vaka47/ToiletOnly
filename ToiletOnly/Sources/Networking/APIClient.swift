@@ -2,8 +2,17 @@ import Foundation
 
 final class APIClient {
     static let shared = APIClient()
+    private let session: URLSession
 
-    private init() {}
+    private init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.waitsForConnectivity = true
+        configuration.timeoutIntervalForRequest = 20
+        configuration.timeoutIntervalForResource = 120
+        configuration.httpMaximumConnectionsPerHost = 6
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        session = URLSession(configuration: configuration)
+    }
 
     func request<T: Decodable>(_ endpoint: String, method: String = "GET", token: String? = nil, body: Encodable? = nil) async throws -> T {
         guard let baseURL = AppConfig.apiBaseURL else {
@@ -11,6 +20,7 @@ final class APIClient {
         }
         var request = URLRequest(url: baseURL.appendingPathComponent(endpoint))
         request.httpMethod = method
+        request.timeoutInterval = method == "GET" ? 15 : 30
         if let token {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
@@ -18,7 +28,7 @@ final class APIClient {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try JSONEncoder().encode(AnyEncodable(body))
         }
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await session.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }
@@ -27,6 +37,10 @@ final class APIClient {
             throw APIClientError(statusCode: httpResponse.statusCode, detail: detail)
         }
         return try JSONDecoder().decode(T.self, from: data)
+    }
+
+    func upload(request: URLRequest, fromFile fileURL: URL) async throws -> (Data, URLResponse) {
+        try await session.upload(for: request, fromFile: fileURL)
     }
 }
 

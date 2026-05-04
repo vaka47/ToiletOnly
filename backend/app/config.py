@@ -2,6 +2,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    environment: str = "development"
     database_url: str = "postgresql+asyncpg://app:app@localhost:5432/toiletonly"
     redis_url: str = "redis://localhost:6379/0"
     jwt_secret: str = "dev-secret"
@@ -18,6 +19,12 @@ class Settings(BaseSettings):
     apns_use_sandbox: bool = True
     media_storage_path: str = "./uploads"
     media_public_url: str = "http://localhost:8000/media"
+    apple_client_id: str = "com.toiletonly.app"
+    allow_dev_apple_sub_tokens: bool = True
+    db_pool_size: int = 10
+    db_max_overflow: int = 20
+    db_pool_timeout: int = 30
+    db_pool_recycle_seconds: int = 1800
 
 
 settings = Settings()

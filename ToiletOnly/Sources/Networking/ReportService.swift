@@ -4,6 +4,7 @@ private struct ReportRequestPayload: Encodable {
     let target_user_id: String
     let report_type: String
     let reason: String?
+    let object_id: String?
 }
 
 final class ReportService {
@@ -11,12 +12,13 @@ final class ReportService {
 
     private init() {}
 
-    func report(targetUserId: String, type: String, reason: String?, token: String?) async {
+    func report(targetUserId: String, type: String, reason: String?, objectId: String? = nil, token: String?) async {
         guard let token else { return }
         let payload = ReportRequestPayload(
             target_user_id: targetUserId,
             report_type: type,
-            reason: reason?.trimmingCharacters(in: .whitespacesAndNewlines)
+            reason: reason?.trimmingCharacters(in: .whitespacesAndNewlines),
+            object_id: objectId?.trimmingCharacters(in: .whitespacesAndNewlines)
         )
         do {
             let _: ReportResponse = try await APIClient.shared.request(

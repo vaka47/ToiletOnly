@@ -20,6 +20,10 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>API_BASE_URL</key>
+	<string>http://127.0.0.1:8000</string>
+	<key>WS_BASE_URL</key>
+	<string>ws://127.0.0.1:8000</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>

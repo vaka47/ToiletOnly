@@ -5,6 +5,7 @@ from ..db import get_db
 from ..models import Match, Message, Block, MatchStatus
 from ..schemas import MessageCreate, MessageOut
 from ..security import get_current_user_id
+from ..services.analytics import track_event
 from ..services.match_policy import ensure_participant_states, apply_status_from_states
 
 router = APIRouter(prefix="/matches", tags=["messages"])
@@ -89,6 +90,14 @@ async def post_message(
 
     message = Message(match_id=match_id, sender_id=user_id, text=payload.text)
     db.add(message)
+    await track_event(
+        db,
+        event_name="message_sent",
+        user_id=user_id,
+        match_id=match_id,
+        source="server",
+        properties={"length": len(payload.text)},
+    )
     await db.commit()
     await db.refresh(message)
     return MessageOut(
