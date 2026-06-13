@@ -12,8 +12,8 @@
 		04912AA0B6F64A2897D3F201 /* BlockedUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04912AA0B6F64A2897D3F200 /* BlockedUsersView.swift */; };
 		0581B45B71A949E3A95D2101 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0581B45B71A949E3A95D2100 /* ChatsView.swift */; };
 		0A8DE7B07D4F4104A1B61101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B27D4F4104A1B61101 /* Assets.xcassets */; };
-		0A8DE7B17D4F4104A1B61101 /* ToiletDetector.mlpackage in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlpackage */; };
-		0A8DE7B47D4F4104A1B61101 /* SceneGuard.mlpackage in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlpackage */; };
+		0A8DE7B17D4F4104A1B61101 /* ToiletDetector.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlmodelc */; };
+		0A8DE7B47D4F4104A1B61101 /* SceneGuard.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = 0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlmodelc */; };
 		1628E1BF2C41BCCDFF065043 /* DatingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE7936E9FAB2EA9547BBB0 /* DatingModels.swift */; };
 		17FDDD0BA70ACC80B43D74BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B31A798B16C993D679DB9 /* AppDelegate.swift */; };
 		1B17656412E6576A9C0E8BFE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59353A59B697F4343288D1C9 /* ProfileView.swift */; };
@@ -67,8 +67,8 @@
 		04912AA0B6F64A2897D3F200 /* BlockedUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersView.swift; sourceTree = "<group>"; };
 		0581B45B71A949E3A95D2100 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		0A8DE7B27D4F4104A1B61101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ToiletOnly/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper.mlpackage; path = ToiletOnly/Resources/ToiletDetector.mlpackage; sourceTree = SOURCE_ROOT; };
-		0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper.mlpackage; path = ToiletOnly/Resources/SceneGuard.mlpackage; sourceTree = SOURCE_ROOT; };
+		0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ToiletOnly/Resources/ToiletDetector.mlmodelc; sourceTree = SOURCE_ROOT; };
+		0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ToiletOnly/Resources/SceneGuard.mlmodelc; sourceTree = SOURCE_ROOT; };
 		0651D9DF6C4AB6A4CF1B8C11 /* PingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingService.swift; sourceTree = "<group>"; };
 		0E2E737D8A7F42F68DF7C8E0 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		0EDDB118D3F7584C86256D56 /* AgeFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeFilterView.swift; sourceTree = "<group>"; };
@@ -254,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				0A8DE7B27D4F4104A1B61101 /* Assets.xcassets */,
-				0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlpackage */,
-				0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlpackage */,
+				0A8DE7B37D4F4104A1B61101 /* ToiletDetector.mlmodelc */,
+				0A8DE7B57D4F4104A1B61101 /* SceneGuard.mlmodelc */,
 				82AF31D35FCE5F2E95A88614 /* Sources */,
 				DF5FA2B15E66FE20F3D64DEA /* Products */,
 			);
@@ -347,8 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A8DE7B07D4F4104A1B61101 /* Assets.xcassets in Resources */,
-				0A8DE7B17D4F4104A1B61101 /* ToiletDetector.mlpackage in Resources */,
-				0A8DE7B47D4F4104A1B61101 /* SceneGuard.mlpackage in Resources */,
+				0A8DE7B17D4F4104A1B61101 /* ToiletDetector.mlmodelc in Resources */,
+				0A8DE7B47D4F4104A1B61101 /* SceneGuard.mlmodelc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

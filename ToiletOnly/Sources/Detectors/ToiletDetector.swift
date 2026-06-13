@@ -160,16 +160,6 @@ final class ToiletDetector: ToiletDetecting {
         configuration: MLModelConfiguration,
         loadMessage: inout String
     ) -> VNCoreMLModel? {
-        if let modelURL = Bundle.main.url(forResource: name, withExtension: "mlpackage") {
-            do {
-                let mlModel = try MLModel(contentsOf: modelURL, configuration: configuration)
-                return try VNCoreMLModel(for: mlModel)
-            } catch {
-                loadMessage = "\(name).mlpackage load error: \(error)"
-                NSLog("ToiletDetector: failed to load %@.mlpackage at %@, error: %@", name, modelURL.path, String(describing: error))
-            }
-        }
-
         if let modelURL = Bundle.main.url(forResource: name, withExtension: "mlmodelc") {
             do {
                 let mlModel = try MLModel(contentsOf: modelURL, configuration: configuration)
@@ -177,6 +167,16 @@ final class ToiletDetector: ToiletDetecting {
             } catch {
                 loadMessage = "\(name).mlmodelc load error: \(error)"
                 NSLog("ToiletDetector: failed to load %@.mlmodelc at %@, error: %@", name, modelURL.path, String(describing: error))
+            }
+        }
+
+        if let modelURL = Bundle.main.url(forResource: name, withExtension: "mlpackage") {
+            do {
+                let mlModel = try MLModel(contentsOf: modelURL, configuration: configuration)
+                return try VNCoreMLModel(for: mlModel)
+            } catch {
+                loadMessage = "\(name).mlpackage load error: \(error)"
+                NSLog("ToiletDetector: failed to load %@.mlpackage at %@, error: %@", name, modelURL.path, String(describing: error))
             }
         }
 
