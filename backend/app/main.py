@@ -223,6 +223,7 @@ async def health_live_head():
 async def health_ready():
     async with engine.connect() as conn:
         await conn.execute(text("SELECT 1"))
+    return {"ok": True, "database": "ok", "environment": settings.environment}
 
 
 @app.head("/health/ready")
