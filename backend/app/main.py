@@ -214,10 +214,20 @@ async def health_live():
     return {"ok": True, "environment": settings.environment}
 
 
+@app.head("/health/live")
+async def health_live_head():
+    return
+
+
 @app.get("/health/ready")
 async def health_ready():
     async with engine.connect() as conn:
         await conn.execute(text("SELECT 1"))
+
+
+@app.head("/health/ready")
+async def health_ready_head():
+    return
     media_ok = os.path.isdir(settings.media_storage_path)
     return {"ok": media_ok, "database": True, "media_storage": media_ok}
 
