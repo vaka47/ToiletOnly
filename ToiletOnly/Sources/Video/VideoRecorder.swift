@@ -278,7 +278,7 @@ final class VideoRecorder: NSObject, ObservableObject {
     private func configureAudioSession() {
         do {
             let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.playAndRecord, mode: .videoRecording, options: [.defaultToSpeaker, .allowBluetooth])
+            try audioSession.setCategory(.playAndRecord, mode: .videoRecording, options: [.defaultToSpeaker, .allowBluetoothHFP])
             try audioSession.setActive(true)
         } catch {
             publishError(error.localizedDescription)

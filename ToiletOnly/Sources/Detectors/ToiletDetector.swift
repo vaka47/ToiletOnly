@@ -278,7 +278,7 @@ final class ToiletDetector: ToiletDetecting {
         let shouldValidateStructure = candidate.rawConfidence >= structureValidationTriggerConfidence || sceneToilet >= 0.24
         let structure = shouldValidateStructure
             ? structureValidation(for: candidate, pixelBuffer: pixelBuffer, orientation: orientation)
-            : StructureValidation(score: 0.32, seatContrast: 0, centerDarkness: 0, whiteRatio: 0.5)
+            : StructureValidation(score: 0.32, seatContrast: 0, centerDarkness: 0, whiteRatio: 0.5, ringAspectRatio: 1.0)
         let sceneNegativeLabel = scene?.negativeLabel ?? "none"
         let sceneNegativeConfidence = scene?.negativeConfidence ?? 0
         let hasSceneToilet = sceneToilet >= 0.24
