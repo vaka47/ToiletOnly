@@ -10,14 +10,14 @@
 ```bash
 cd deploy
 cp .env.production.example .env.production
-docker compose -f docker-compose.prod.yml up -d --build
+docker-compose --env-file .env.production -f docker-compose.prod.yml up -d --build
 ```
 
 ## 3. Readiness checks
 ```bash
 curl http://127.0.0.1:8000/health/live
 curl http://127.0.0.1:8000/health/ready
-docker compose -f docker-compose.prod.yml ps
+docker-compose --env-file .env.production -f docker-compose.prod.yml ps
 ```
 
 ## 4. Before public traffic

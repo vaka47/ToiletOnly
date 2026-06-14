@@ -418,6 +418,7 @@
 		3A884B123B5D7865B1EEA1D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_BASE_URL = "https://toiletonly-35-192-233-44.sslip.io";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 					CODE_SIGN_IDENTITY = "Apple Development";
 					CODE_SIGN_STYLE = Automatic;
@@ -430,6 +431,7 @@
 					);
 					SDKROOT = iphoneos;
 					TARGETED_DEVICE_FAMILY = 1;
+				WS_BASE_URL = "wss://toiletonly-35-192-233-44.sslip.io";
 				};
 			name = Release;
 		};
@@ -501,6 +503,7 @@
 			8D245C56E84B2F7CA6269705 /* Debug */ = {
 				isa = XCBuildConfiguration;
 				buildSettings = {
+					API_BASE_URL = "http://127.0.0.1:8000";
 					ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 					CODE_SIGN_IDENTITY = "Apple Development";
 					CODE_SIGN_STYLE = Automatic;
@@ -514,6 +517,7 @@
 					);
 					SDKROOT = iphoneos;
 					TARGETED_DEVICE_FAMILY = 1;
+					WS_BASE_URL = "ws://127.0.0.1:8000";
 				};
 			name = Debug;
 		};
